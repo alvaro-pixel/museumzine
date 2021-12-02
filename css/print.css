@@ -1,0 +1,110 @@
+/*
+Read this
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Organizing*/
+
+/* || General styles */
+
+body {
+  margin: 0;
+  color: #000;
+  background-color: #fff;
+}
+
+a{
+  color:#000;
+  
+}
+
+/* Therefore, as a first task, we will hide all the clutter: 
+  namely, the main navigation and footer. */
+
+header nav, footer {
+  display: none;
+}
+
+/* Keeps the max width of your images to a minimum */
+
+img {
+  max-width: 300px;
+}
+
+@page :left {
+  margin: 0.5cm;
+}
+
+@page :right {
+  margin: 10cm;
+}
+
+/* Usage of system available fonts and good for readability 
+  1.5 line-height is recommened to enhance readadiblity as well*/
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 12pt;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 24pt;
+}
+
+h2 {
+  font-size: 16pt;
+  margin-top: 25px;
+}
+
+h2 {
+  font-size: 14pt;
+  margin-top: 25px;
+}
+
+aside h2 {
+  font-size: 18pt;
+}
+
+ul {
+  list-style: none
+}
+
+li {
+  content: "» ";
+}
+
+header:after {
+  content: "www.museumzine.com";
+}
+
+header:before {
+  display: block;
+  content: "Thank you for printing our content at museumzine";
+  margin-bottom: 10px;
+  border: 1px solid #bbb;
+  padding: 3px 5px;
+  font-style: italic;
+}
+
+video {
+  display: none;
+}
+
+.upcoming-talks:after {
+  display: block;
+  content: "This information can be accessed online at museumzine";
+  margin-bottom: 10px;
+  border: 1px solid #bbb;
+  padding: 3px 5px;
+  font-style: italic;
+}
+
+details{
+  display: contents;
+}
+
+button{
+  display: none;
+}
+
+.newsletter{
+  display: none;
+}

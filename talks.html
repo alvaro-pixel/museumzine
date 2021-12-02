@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Museumzine - Talks Page</title>
+        <!-- Here we have two separate stylesheets
+        one for our screen displays and one for users who want to print -->
+        <link rel="stylesheet" media="screen" href="css/styles.css">
+        <link rel="stylesheet" media="print" href="css/print.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,200&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- This section is mainly audio focused, with resources coming from cultural instutions that share their content via soundcloud,
+            having different media was something I wanted to do for this site, it also helps users who have some reading impairements making 
+            a case for accesibility. -->
+        <header>
+            <nav class="nav-main">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/museumzine-logo.svg" alt="Image of museumzine logo" style="width:200px;">
+                    </a>
+                </div>
+                <div id="font-size-edit">
+                    <span class="small" id="smallA">A</span>
+                    <span class="medium" id="mediumA">A</span>
+                    <span class="large" id="largeA">A</span>
+                </div>
+                <div class="btn-toggle-nav" onclick="openNavMenu()"></div>
+            </nav>
+            <!-- Button to open and close our navigation-->
+            <div class="menu-hidden">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="articles.html">Articles</a>
+                    </li>
+                    <li>
+                        <a href="education.html">Education</a>
+                    </li>
+                    <li>
+                        <a href="talks.html">Talks</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="resources.html">Resources</a>
+                    </li>
+                    <!--Creating a switch for color contrast-->
+                    <li>
+                        <p id="night-mode">Night Mode</p>
+                    </li>
+                </ul>
+            </div>
+            <!--End of main nav menu-->
+            <div class="index-title-talks-page">
+                <h1>Talks</h1>
+                <h3>
+                    Our audio colection of 
+            talks from different open sources, find topics from the past and present about museums
+                </h3>
+            </div>
+        </header>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!-- breadcrumbs row -->
+        <nav class="breadcrumbs-nav">
+            <div class="bread-itm">You are here:</div>
+            <div></div>
+            <div class="bread-itm">
+                <a href="index.html">Home /</a>
+            </div>
+            <div class="bread-itm">Talks</div>
+        </nav>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!-- Start of talks section-->
+        <section class="talks" tabindex="0">
+            <div class="talks-img-title">
+                <img src="images/avatar-nationa-gallery.jpg" alt="Image of a museumzine logo" style="width:100px;margin-right: 2%;">
+                <p>National Gallery of Art</p>
+            </div>
+            <div class="talks-publication-date">
+                <img src="images/published-icon.svg" alt="an image of a calendar icon" style="width:auto;margin-right: 2%;">
+                <p>Published 6 days ago</p>
+            </div>
+            <div class="talks-description">
+                <!-- Audio articles are taken and embedded via soundcloud */ -->
+                <iframe
+                    width="100%"
+                    height="166"
+                    scrolling="no"
+                    frameborder="no"
+                    allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/993930538&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+                ></iframe>
+                <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                    <a
+                        href="https://soundcloud.com/nationalgalleryofart"
+                        title="National Gallery of Art"
+                        target="_blank"
+                        style="color: #cccccc; text-decoration: none;"
+                    >National Gallery of Art</a> ·
+                    <a
+                        href="https://soundcloud.com/nationalgalleryofart/5-untitledrothko-final"
+                        title="Kamala Sankaram and Mark Rothko’s “Untitled”"
+                        target="_blank"
+                        style="color: #cccccc; text-decoration: none;"
+                    >Kamala Sankaram and Mark Rothko’s “Untitled”</a>
+                </div>
+                <div id="title">"Sound Thoughts on Art"</div>
+                <p>
+                    This episode focues on Mark Rothko's art, an artist borned in the backwaters of the late Russian empire. The composer Kamala Sankaram analyses one of Rothko's pieces called, untitled. She guides us through her explorations of grief and the musical score she was creating at the time. Summary by Alvaro Alvarez
+                </p>
+                <p>
+                    <i>
+                        <!-- To download transcript-->
+                        Find full transcripts and more information about this episode at https://www.nga.gov/music-programs/podcasts/kamala-sankaram-mark-rothko.html
+                    </i>
+                </p>
+            </div>
+        </section>
+        <!-- Second audio lecture-->
+        <section class="talks" tabindex="0">
+            <div class="talks-img-title">
+                <img src="images/avatar-artsy.jpg" alt="Image of a museumzine logo" style="width:100px;margin-right: 2%;">
+                <p>The Artsty Podcast</p>
+            </div>
+            <div class="talks-publication-date">
+                <img src="images/published-icon.svg" alt="an image of a calendar icon" style="width:auto;margin-right: 2%;">
+                <p>Published 7 days ago</p>
+            </div>
+            <div class="talks-description">
+                <!-- Audio articles are taken and embedded via soundcloud */ -->
+                <iframe
+                    width="100%"
+                    height="166"
+                    scrolling="no"
+                    frameborder="no"
+                    allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/253703721&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+                ></iframe>
+                <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                    <a
+                        href="https://soundcloud.com/artsypodcast"
+                        title="The Artsy Podcast"
+                        target="_blank"
+                        style="color: #cccccc; text-decoration: none;"
+                    >The Artsy Podcast</a>
+                    ·
+                    <a
+                        href="https://soundcloud.com/artsypodcast/no-2-art-history-vs-the-art-market"
+                        title="No. 2: Art History vs. the Art Market"
+                        target="_blank"
+                        style="color: #cccccc; text-decoration: none;"
+                    >No. 2: Art History vs. the Art Market</a>
+                </div>
+            </iframe>
+            <p>
+                This episode takes a look at the relation between art history and art market. Art is constantly determined not only by the individual genius of the artist but also by how the market influences the price of works of art. Taste is an separate abstract condition but follows a series of conventions born from patrons and artists as well as art merchants and of course the general public. - Summary by: Alvaro Alvarez
+            </p>
+            <p>
+                <i>
+                    <!-- To download transcript-->
+                    Piece accompanying the episode: https://www.artsy.net/article/artsy-editorial-the-artsy-podcast-no-2-art-history-vs-the-art-market
+                </i>
+            </p>
+        </div>
+    </section>
+
+    <!-- Third audio lecture-->
+    <section class="talks" tabindex="0">
+        <div class="talks-img-title">
+            <img src="images/avatar-gugenheim.jpg" alt="Image of a museumzine logo" style="width:100px;margin-right: 2%;">
+            <p>Solomon R Guggenheim Museum</p>
+        </div>
+        <div class="talks-publication-date">
+            <img src="images/published-icon.svg" alt="an image of a calendar icon" style="width:auto;margin-right: 2%;">
+            <p>Published 7 days ago</p>
+        </div>
+        <div class="talks-description">
+            <!-- Audio articles are taken and embedded via soundcloud */ -->
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/163287149&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/guggenheimmuseum" title="Solomon R. Guggenheim Museum" target="_blank" style="color: #cccccc; text-decoration: none;">Solomon R. Guggenheim Museum</a> · <a href="https://soundcloud.com/guggenheimmuseum/luis-camnitzer-art-history-lesson-no-6-2000" title="Luis Camnitzer, Art History Lesson No. 6, 2000" target="_blank" style="color: #cccccc; text-decoration: none;">Luis Camnitzer, Art History Lesson No. 6, 2000</a></div>
+        <p>
+            In this interview Luis Camnitzer, artist from Uruguay who is concerned with art, art as education and consumerism within the museum walls. He presents his workm, that revolves around precarius platforms and found objects that makes us 
+            relfect on our history. He tries to explain how our history is constructed as an hegemonic structure and provides a way to reflect on how to create new narratives and different 'art stories'. Summary by Alvaro Alvarez
+        </p>
+      
+    </div>
+</section>
+
+<div class=spacer></div>
+
+    <div class="more-talks-row">
+        <hr width="100px">
+        <div id="title">More Talks</div>
+        <hr width="100px">
+    </div>
+    <!-- spacer row -->
+    <div class="spacer"></div>
+    <section class="extra-talks">
+        <div class="extra-talks-publication">
+            <img src="images/shape-for-publications.svg" alt="an violet or purple graphic used to highlight publication date" style="width:2%;margin-right: 2%;height:50px">
+            <p>Published 6 days ago</p>
+        </div>
+        <div id="title">"Sound Thoughts on Art" trailer</div>
+        <div class="extra-talk-content">
+            <p>Hosted by musician and journalist Celeste Headlee, each episode focuses on a work of art in the National Gallery’s collection.</p>
+            <img src="images/arrow.svg" alt="Image of a black lower left arrow icon" style="width:30px;">
+        </div>
+    </section>
+    <!-- spacer row -->
+    <div class="spacer"></div>
+    <!--Footer starts here-->
+    <!--Footer starts here-->
+    <footer>
+        <div id="footer-logo">
+            <a href="index.html">
+                <img src="images/museumzine-logo-footer.svg" alt="Image of museumzine logo" style="width:200px;">
+            </a>
+        </div>
+        <div id="footer-description">
+            Museumzine is a collection of articles, lectures and talks
+            for all those interested in museums and art
+        </div>
+        <div id="footer-nav">
+            <a href="articles.html">Articles</a>
+            <a href="education.html">Education</a>
+            <a href="talks.html">Talks</a>
+            <a href="about.html">About</a>
+            <a href="resources.html">Resources</a>
+            <a href="#top">Back to top</a>
+        </div>
+        <div id="contact">
+            To contact please reach out to
+            <a href="mailto:aaam4@student.london.ac.uk" target="_top" tabindex="0">aaam4@student.london.ac.uk</a>
+        </div>
+        <div id="copyright" tabindex="0">
+            (CC) 2021 Museumzine
+        This is a student project for the University of London’s Computer Science Program authored by Álvaro Álvarez
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Museumzine - Resources Page</title>
+        <!-- Here we have two separate stylesheets
+        one for our screen displays and one for users who want to print -->
+        <link rel="stylesheet" media="screen" href="css/styles.css">
+        <link rel="stylesheet" media="print" href="css/print.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,200&family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <!-- Calls react library-->
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+        <!-- To use JSX to write javascript with tags lik in html-->
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            /* Calls our list of books  - The main purpose of this JS section is to have lists easily
+            changed without having to write tags or sections in the body of our html - These book suggestions
+            were provided by a google query*/
+            function MyListBookSection() {
+                const bookListTheory = [{ img: "images/one-vector.svg", 
+                                    title: "New Museum Theory and Practice: An Introduction",
+                                    author: "Jane C. Marstine"},
+                                    {
+                                    img: "images/two-vector.svg", 
+                                    title: "Museum Learning: Theory and Research tools",
+                                    author: " Theano Moussouri"
+                                    },
+                                    {
+                                    img: "images/three-vector.svg", 
+                                    title: "Museums, objects, and collections",
+                                    author: "Susan M. Pearce"
+                                   },
+                                   {
+                                    img: "images/four-vector.svg", 
+                                    title: "Designing for the Museum Visitor Experience",
+                                    author: "Tiina Roppola"
+                                   },
+
+                                   {
+                                    img: "images/five-vector.svg", 
+                                    title: "Contemporary Museum Architecture and Design",
+                                    author: "Georgia Lindsay"
+                                 }
+
+                            ];
+
+                const bookListDesign = [{ img: "images/one-vector.svg", 
+                                    title: "Creating Exhibitions: Collaboration in the Planning...",
+                                    author: "Polly McKenna-Cress"},
+                                    {
+                                    img: "images/two-vector.svg", 
+                                    title: "The Manual of Museum Exhibitions",
+                                    author: "Barry Lord"
+                                    },
+                                    {
+                                    img: "images/three-vector.svg", 
+                                    title: "What Makes a Great Exhibition?",
+                                    author: "Paula Marincola"
+                                   },
+                                   {
+                                    img: "images/four-vector.svg", 
+                                    title: "The Object in Its Place",
+                                    author: "Signe S. Mayfield"
+                                   },
+
+                                   {
+                                    img: "images/five-vector.svg", 
+                                    title: "The Art of Museum Exhibitions: How Story and Imagination Create Aesthetic Experiences",
+                                    author: "Leslie Bedford"
+                                 }
+
+                            ];    
+                            
+                const bookListHistory = [{ img: "images/one-vector.svg", 
+                                    title: "Museum History",
+                                    author: "Jane C. Marstine"},
+                                    {
+                                    img: "images/two-vector.svg", 
+                                    title: "Museum Through a Lens:",
+                                    author: "Susan Snell and Polly Parry"
+                                    },
+                                    {
+                                    img: "images/three-vector.svg", 
+                                    title: " Museums: A History ",
+                                    author: "John Edward Simmons"
+                                   },
+                                   {
+                                    img: "images/four-vector.svg", 
+                                    title: "Natural Histories",
+                                    author: "Tom Baione"
+                                   },
+
+                                   {
+                                    img: "images/five-vector.svg", 
+                                    title: "The Birth of the Museum:",
+                                    author: "Tony Bennett"
+                                 }
+
+                            ];      
+                      
+                /*React uses states by declaring useState ("with a default value in this case an empty array") */          
+                //const truthArray=useState([]);   
+                const [truthArray,setTruthArray]=React.useState(bookListTheory);  
+                
+                /*This is how you declare a use state that can later be used inside the truthArray */
+                 /* Example of state declaration in react: const [numberExample,setNumberExample]=useState(1);*/
+
+                /* map passes and array and returns an array of what you need */
+
+                /*Must return everything */
+                /*Must use className instead of class since class is used natively by react */
+                /*Some tags require to close with a slash in the end */
+                    
+                /* return  <section className="category-by-books">
+                    <img src="images/one-vector.svg"/>
+                    <div className="category-content">
+                    <h2>New Museum Theory and Practice: An Introduction</h2>
+                        <div id="author">
+                        <p> Janet C. Marstine</p>
+                        </div>
+                        <button id="btn-categor-details">View Details</button>
+                        <hr/>
+                        </div>
+                        </section> */
+
+                        /*Onclick displays the list type */
+                        function clickHandler(listType){
+
+
+                            if(listType == "bookListTheory")
+                            {
+                                setTruthArray(bookListTheory) 
+                            }
+                            
+                            if(listType == "bookListDesign")
+                            {
+                                setTruthArray(bookListDesign) 
+
+                            }
+
+                            if(listType == "bookListHistory")
+                            {
+                                setTruthArray(bookListHistory) 
+
+                            }
+
+
+                            console.log(listType);
+                        }
+                    
+                        /* .bind saves the dunction in the click event */
+                        
+                    return <div> 
+                        
+                        <section class="book-categories-columns">
+
+                                <section class="item-1">
+                                    <div class="category-img">
+                                        <img src="images/category-icon.svg" alt="Image an open book icon" tabindex="0"/>
+                                    </div>
+                                    <div class="book-content">
+                                        <h3>Museum Theory Books</h3>
+                                        <p>For those with a more philosophical mindset</p>
+                                        
+                                        <button id="btn-categor-details" onClick={clickHandler.bind(this,"bookListTheory")}>View List</button>
+
+                                    </div>
+                                </section>
+
+                                <section class="item-1">
+                                    <div class="category-img">
+                                        <img src="images/category-icon.svg" alt="Image an open book icon" tabindex="0"/>
+                                    </div>
+                                    <div class="book-content">
+                                        <h3>Museum Design Books</h3>
+                                        <p>For those thinking about creating and designing exhibits</p>
+                                        <button id="btn-categor-details" onClick={clickHandler.bind(this,"bookListDesign")}>View List</button>
+
+                                    </div>
+                                
+                                    </section>
+                                    <section class="item-1">
+                                        <div class="category-img">
+                                            <img src="images/category-icon.svg" alt="Image an open book icon" tabindex="0"/>
+                                        </div>
+                                        <div class="book-content">
+                                            <h3>Museum History Books</h3>
+                                            <p>For those who want to get to the roots of museums</p>
+                                            <button id="btn-categor-details" onClick={clickHandler.bind(this,"bookListHistory")}>View List</button>
+
+                                        </div>
+                            
+                                        </section>
+                        </section>
+                        
+                        <div class="spacer"></div>
+
+                        {
+                            /*This is 'inside' javascript inside 'JSX' */
+                            /* Will map an empty array for now*/ 
+                            /*React hast states to know which array to display/render */
+                            truthArray.map(function(bookInfo){
+
+                                /**/
+                                return  <section className="category-by-books">
+                                        <img src={bookInfo.img}/>
+                                        <div className="category-content">
+                                        <h2>{bookInfo.title}</h2>
+                                        <div id="author">
+                                        <p> {bookInfo.author}</p>
+                                        </div>
+                                        <button id="btn-categor-details">View Details</button>
+                                        <hr/>
+                                        </div>
+                                    </section>
+
+                                    }) 
+                        }
+                        
+                    </div>
+
+            };
+
+             ReactDOM.render(<MyListBookSection/>,document.getElementById('reactContainer'))
+        </script>
+    </head>
+    <body>
+        <!-- This section besides giving visitors a curated list of books to read, is mostly centered around
+            the use of JS and a library called react. I wanted a way to store the lists in arrays and let
+            the site's visitors be able to swtich between the categories of: history,design, and theory.
+            This has a very practical use, in the future the lists of books are easy to updated without
+            the need of writting the code ourselves.
+-->
+        <header>
+            <nav class="nav-main">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/museumzine-logo.svg" alt="Image of museumzine logo" style="width:200px;">
+                    </a>
+                </div>
+                <div id="font-size-edit">
+                    <span class="small" id="smallA">A</span>
+                    <span class="medium" id="mediumA">A</span>
+                    <span class="large" id="largeA">A</span>
+                </div>
+                <div class="btn-toggle-nav" onclick="openNavMenu()"></div>
+            </nav>
+            <!-- Button to open and close our navigation-->
+            <div class="menu-hidden">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="articles.html">Articles</a>
+                    </li>
+                    <li>
+                        <a href="education.html">Education</a>
+                    </li>
+                    <li>
+                        <a href="talks.html">Talks</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="resources.html">Resources</a>
+                    </li>
+                    <!--Creating a switch for color contrast-->
+                    <li>
+                        <p id="night-mode">Night Mode</p>
+                    </li>
+                </ul>
+            </div>
+            <!--End of main nav menu-->
+            <div class="index-title-resources-page">
+                <h1>Resources</h1>
+                <h3>Discover in this section a list of recommended books about museums.</h3>
+            </div>
+        </header>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!-- breadcrumbs row -->
+        <nav class="breadcrumbs-nav">
+            <div class="bread-itm">
+                <p>You are here:</p>
+            </div>
+            <div></div>
+            <div class="bread-itm">
+                <a href="index.html">
+                    <p>Home |</p>
+                </a>
+            </div>
+            <div class="bread-itm">
+                <p>Resources</p>
+            </div>
+        </nav>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!-- Selection of type of book list, this is the view for mobile only-->
+        <section class="book-categories">
+            <!-- Selection of type of category list Theory-->
+            <div class="category-img">
+                <img src="images/category-icon.svg" alt="Image an open book icon" tabindex="0">
+            </div>
+            <div class="book-content">
+                <h3>Museum Theory Books</h3>
+                <p>For those with a more philosophical mindset</p>
+            </div>
+        </section>
+        <section class="book-categories">
+            <!-- Selection of type of category list Design-->
+            <div class="category-img">
+                <img src="images/category-icon.svg" alt="Image an open book icon" tabindex="0">
+            </div>
+            <div class="book-content">
+                <h3>Museum Design Books</h3>
+                <p>For those thinking about creating and designing exhibits</p>
+            </div>
+        </section>
+        <!-- This section is for mobile only-->
+        <section class="book-categories">
+            <!-- Selection of type of category list History-->
+            <div class="category-img">
+                <img src="images/category-icon.svg" alt="Image an open book icon" tabindex="0">
+            </div>
+            <div class="book-content">
+                <h3>Museum History Books</h3>
+                <p>For those who want to get to the roots of museums</p>
+            </div>
+        </section>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!-- REACT CONTAINER HERE ! -->
+        <div id="reactContainer"></div>
+        <!-- REACT CONTAINER HERE ! -->
+        <!-- OLD HTTML CODE FOR REVIEW -->
+        <!-- 
+            <section class="theory-books-mobile">
+     <h3>Museum Theory Books</h3>
+            
+            <section class="category-by-books">
+            <img src="images/one-vector.svg">
+            <div class="category-content">
+                <h2>New Museum Theory and Practice: An Introduction</h2>
+                <div id="author">
+                    <p> Janet C. Marstine</p>
+                </div>
+                <button id="btn-categor-details">View Details</button>
+                <hr>
+            </div>
+        </section>
+        <section class="category-by-books">
+            <img src="images/two-vector.svg">
+            <div class="category-content">
+                <h2>New Museum Theory and Practice: An Introduction</h2>
+                <div id="author">
+                    <p> Janet C. Marstine</p>
+                </div>
+                <button id="btn-categor-details">View Details</button>
+                <hr>
+            </div>
+        </section>
+        <section class="category-by-books">
+            <img src="images/three-vector.svg">
+            <div class="category-content">
+                <h2>New Museum Theory and Practice: An Introduction</h2>
+                <div id="author">
+                    <p> Janet C. Marstine</p>
+                </div>
+                <button id="btn-categor-details">View Details</button>
+                <hr>
+            </div>
+        </section>
+        <section class="category-by-books">
+            <img src="images/four-vector.svg">
+            <div class="category-content">
+                <h2>New Museum Theory and Practice: An Introduction</h2>
+                <div id="author">
+                    <p> Janet C. Marstine</p>
+                </div>
+                <button id="btn-categor-details">View Details</button>
+                <hr>
+            </div>
+        </section>
+        <section class="category-by-books">
+            <img src="images/five-vector.svg">
+            <div class="category-content">
+                <h2>New Museum Theory and Practice: An Introduction</h2>
+                <div id="author">
+                    <p> Janet C. Marstine</p>
+                </div>
+                <button id="btn-categor-details">View Details</button>
+                <hr>
+            </div>
+        </section>
+    </section> -->
+        <!--Footer starts here-->
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!--Footer starts here-->
+        <footer>
+            <div id="footer-logo">
+                <a href="index.html">
+                    <img src="images/museumzine-logo-footer.svg" alt="Image of museumzine logo" style="width:200px;">
+                </a>
+            </div>
+            <div id="footer-description">
+                Museumzine is a collection of articles, lectures and talks
+            for all those interested in museums and art
+            </div>
+            <div id="footer-nav">
+                <a href="articles.html">Articles</a>
+                <a href="education.html">Education</a>
+                <a href="talks.html">Talks</a>
+                <a href="about.html">About</a>
+                <a href="resources.html">Resources</a>
+                <a href="#top">Back to top</a>
+            </div>
+            <div id="contact">
+                To contact please reach out to
+                <a href="mailto:aaam4@student.london.ac.uk" target="_top" tabindex="0">aaam4@student.london.ac.uk</a>
+            </div>
+            <div id="copyright" tabindex="0">
+                (CC) 2021 Museumzine
+        This is a student project for the University of London’s Computer Science Program authored by Álvaro Álvarez
+            </div>
+        </footer>
+        <script src="js/main.js"></script>
+    </body>
+</html>

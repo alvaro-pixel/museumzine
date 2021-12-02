@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Museumzine - Education Page</title>
+        <!-- Here we have two separate stylesheets
+        one for our screen displays and one for users who want to print -->
+        <link rel="stylesheet" media="screen" href="css/styles.css">
+        <link rel="stylesheet" media="print" href="css/print.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,200&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    </head>
+    <body>
+     <!--This page is mainly about different instuations providing courses (mostly online) for art students,
+    professionals or enthusiats who want to know more about museums and the art world in general, the
+sections are divided into free courses first and then a paid courses section, in some blogs or newsletter it
+is custom to have some space for adverstising, so this idea came to minde-->
+        <header>
+            <nav class="nav-main">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/museumzine-logo.svg" alt="Image of museumzine logo" style="width:200px;">
+                    </a>
+                </div>
+                <div id="font-size-edit">
+                    <span class="small" id="smallA">A</span>
+                    <span class="medium" id="mediumA">A</span>
+                    <span class="large" id="largeA">A</span>
+                </div>
+                <div class="btn-toggle-nav" onclick="openNavMenu()"></div>
+            </nav>
+            <!-- Button to open and close our navigation-->
+            <div class="menu-hidden">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="articles.html">Articles</a>
+                    </li>
+                    <li>
+                        <a href="education.html">Education</a>
+                    </li>
+                    <li>
+                        <a href="talks.html">Talks</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="resources.html">Resources</a>
+                    </li>
+                    <!--Creating a switch for color contrast-->
+                    <li>
+                        <p id="night-mode">Night Mode</p>
+                    </li>
+                </ul>
+            </div>
+            <!--End of main nav menu-->
+            <div class="index-title-education-page">
+                <h1>Education</h1>
+                <h3>Access to education, so you can dig deeper into specific museum topics. Find free lectures or find a schedule for live sessions.</h3>
+            </div>
+        </header>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!-- breadcrumbs row -->
+        <nav class="breadcrumbs-nav">
+            <div class="bread-itm">You are here:</div>
+            <div></div>
+            <div class="bread-itm">
+                <a href="index.html">Home /</a>
+            </div>
+            <div class="bread-itm">Education</div>
+        </nav>
+        <!-- Start of open courses section-->
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <section class="open-courses" tabindex="0">
+            <!-- oc stands for open course -->
+            <div class="oc-title-box">
+                <h3>Open courses</h3>
+            </div>
+            <p>
+                Open courses are selected for readers who want to dig deep and go beyond
+                articles.
+            </p>
+            <!-- First  Course-->
+            <div class="oc-course-box-1">
+                <h3>Behind the Scenes at the 21st Century Museum</h3>
+                <img src="images/arrow.svg" alt="Image of a black lower left arrow icon" style="width:5%;">
+            </div>
+            <!-- First  Course-->
+            <div class="oc-course-box-1">
+                <h3>The Museum as a Site and Source for Learning</h3>
+                <img src="images/arrow.svg" alt="Image of a black lower left arrow icon" style="width:5%;">
+            </div>
+            <!-- First  Course-->
+            <div class="oc-course-box-1">
+                <h3>Museums as Spaces for Wellbeing</h3>
+                <img src="images/arrow.svg" alt="Image of a black lower left arrow icon" style="width:5%;">
+            </div>
+            <!-- First  Course-->
+            <div class="oc-course-box-1">
+                <h3>Arts and Heritage Management</h3>
+                <img src="images/arrow.svg" alt="Image of a black lower left arrow icon" style="width:5%;">
+            </div>
+            <!-- First  Course-->
+            <div class="oc-course-box-1">
+                <h3>The cultural strategy course</h3>
+                <img src="images/arrow.svg" alt="Image of a black lower left arrow icon" style="width:5%;">
+            </div>
+        </section>
+        <!-- Start of paid courses section-->
+        <section class="paid-courses" tabindex="0">
+            <!-- pc stands for open course -->
+            <div class="pc-title-box">
+                <h3>Paid courses</h3>
+            </div>
+            <p>
+                Paid courses are selected for readers who want to dig deep and go beyond
+                articles.
+            </p>
+            <!-- First Course-->
+            <div id="course-picture"></div>
+            <div class="pc-course-box">
+                <div class="pc-box-content">
+                    <h3>Curating Today</h3>
+                    <p>By Sotheby’s Insitute of art</p>
+                </div>
+                <img src="images/arrow.svg" alt="Image of a black lower left arrow icon" style="width:10%;">
+            </div>
+            <!-- Second  Course-->
+            <div id="course-picture-2"></div>
+            <div class="pc-course-box">
+                <div class="pc-box-content">
+                    <h3>Museum Studies Course</h3>
+                    <p>
+                        By University of West Georgia
+                    </p>
+                </div>
+                <img src="images/arrow.svg" alt="Image of a black lower left arrow icon" style="width:10%;">
+            </div>
+        </section>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!-- Quotaion-->
+        <div class="quote">
+            <q>If you you are interested in accessing more information about museums and art related topics, join our newsletter.</q>
+            <br>
+        </div>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <div class="thought-submit">
+            <img src="images/horizontal-arrow-vl.svg" alt="Image of violet horizontal arrow" style="width:5%;">
+            <a href="mailto:">
+                <p> &nbsp;Let know your thoughts on this list</p>
+            </a>
+        </div>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!--Footer starts here-->
+        <!--Footer starts here-->
+        <footer>
+            <div id="footer-logo">
+                <a href="index.html">
+                    <img src="images/museumzine-logo-footer.svg" alt="Image of museumzine logo" style="width:200px;">
+                </a>
+            </div>
+            <div id="footer-description">
+                Museumzine is a collection of articles, lectures and talks
+            for all those interested in museums and art
+            </div>
+            <div id="footer-nav">
+                <a href="articles.html">Articles</a>
+                <a href="education.html">Education</a>
+                <a href="talks.html">Talks</a>
+                <a href="about.html">About</a>
+                <a href="resources.html">Resources</a>
+                <a href="#top">Back to top</a>
+            </div>
+            <div id="contact">
+                To contact please reach out to
+                <a href="mailto:aaam4@student.london.ac.uk" target="_top" tabindex="0">aaam4@student.london.ac.uk</a>
+            </div>
+            <div id="copyright" tabindex="0">
+                (CC) 2021 Museumzine
+        This is a student project for the University of London’s Computer Science Program authored by Álvaro Álvarez
+            </div>
+        </footer>
+        <script src="js/main.js"></script>
+    </body>

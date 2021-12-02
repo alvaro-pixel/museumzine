@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Museumzine - Articles Page</title>
+        <!-- Here we have two separate stylesheets
+        one for our screen displays and one for users who want to print -->
+        <link rel="stylesheet" media="screen" href="css/styles.css">
+        <link rel="stylesheet" media="print" href="css/print.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,200&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- This section's name is self-explanatory but the purpose is to show articles and then allow users to click on the ones
+            they would like to read and go to another page with the full version of the article
+-->
+        <header>
+            <nav class="nav-main">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/museumzine-logo.svg" alt="Image of museumzine logo" style="width:200px;">
+                    </a>
+                </div>
+                <div id="font-size-edit">
+                    <span class="small" id="smallA">A</span>
+                    <span class="medium" id="mediumA">A</span>
+                    <span class="large" id="largeA">A</span>
+                </div>
+                <div class="btn-toggle-nav" onclick="openNavMenu()"></div>
+            </nav>
+            <!-- Button to open and close our navigation-->
+            <div class="menu-hidden">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="articles.html">Articles</a>
+                    </li>
+                    <li>
+                        <a href="education.html">Education</a>
+                    </li>
+                    <li>
+                        <a href="talks.html">Talks</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="resources.html">Resources</a>
+                    </li>
+                    <!--Creating a switch for color contrast-->
+                    <li>
+                        <p id="night-mode">Night Mode</p>
+                    </li>
+                </ul>
+            </div>
+            <!--End of main nav menu-->
+            <div class="index-title-articles-page">
+                <h1>Articles</h1>
+                <h3>Discover fun articles to learn more about museum and art.</h3>
+            </div>
+        </header>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!-- breadcrumbs row -->
+        <nav class="breadcrumbs-nav">
+            <div class="bread-itm">You are here:</div>
+            <div></div>
+            <div class="bread-itm">
+                <a href="index.html">Home /</a>
+            </div>
+            <div class="bread-itm">Articles</div>
+        </nav>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!-- Start of article section-->
+        <section class="articles-section">
+            <!-- First Article-->
+            <section class="articles" tabindex="0">
+                <article class="article-box-2" tabindex="0">
+                    <div class="title-graph">
+                        <h3>Why we need museums</h3>
+                    </div>
+                    <div class="time-description">
+                        <img src="images/time-icon-white.svg" alt="image icon of a clock">
+                        <p>Jan 8 - 2021 | 8 min read</p>
+                    </div>
+                </article>
+                <button class="read-article-btn">
+                    <a href="articles/article-one.html">Read Article</a>
+                </button>
+            </section>
+            <!-- spacer row -->
+            <div class="spacer"></div>
+            <!-- Second Article-->
+            <section class="articles" tabindex="0">
+                <article class="article-box-2" tabindex="0">
+                    <div class="title-graph">
+                        <h3>Post COVID-19 Museums</h3>
+                    </div>
+                    <div class="time-description">
+                        <img src="images/time-icon-white.svg" alt="image icon of a clock">
+                        <p>
+                            Jan 8 - 2021
+            | 8 min read
+                        </p>
+                    </div>
+                </article>
+                <button class="read-article-btn">
+                    <a href="articles/article-two.html">Read Article</a>
+                </button>
+            </section>
+            <!-- spacer row -->
+            <div class="spacer"></div>
+            <!-- Third Article-->
+            <section class="articles" tabindex="0">
+                <article class="article-box-2" tabindex="0">
+                    <div class="title-graph">
+                        <h3>Museums in Asia</h3>
+                    </div>
+                    <div class="time-description">
+                        <img src="images/time-icon-white.svg" alt="image icon of a clock">
+                        <p>Jan 8 - 2021 | 8 min read</p>
+                    </div>
+                </article>
+                <button class="read-article-btn">
+                    <a href="articles/article-three.html">Read Article</a>
+                </button>
+            </section>
+        </section>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!--Footer starts here-->
+        <footer>
+            <div id="footer-logo">
+                <a href="index.html">
+                    <img src="images/museumzine-logo-footer.svg" alt="Image of museumzine logo" style="width:200px;">
+                </a>
+            </div>
+            <div id="footer-description">
+                Museumzine is a collection of articles, lectures and talks
+        for all those interested in museums and art
+            </div>
+            <div id="footer-nav">
+                <a href="articles.html">Articles</a>
+                <a href="education.html">Education</a>
+                <a href="talks.html">Talks</a>
+                <a href="about.html">About</a>
+                <a href="resources.html">Resources</a>
+                <a href="#top">Back to top</a>
+            </div>
+            <div id="contact">
+                To contact please reach out to
+                <a href="mailto:aaam4@student.london.ac.uk" target="_top" tabindex="0">aaam4@student.london.ac.uk</a>
+            </div>
+            <div id="copyright" tabindex="0">
+                (CC) 2021 Museumzine
+    This is a student project for the University of London’s Computer Science Program authored by Álvaro Álvarez
+            </div>
+        </footer>
+        <script src="js/main.js"></script>
+    </body>
+</html>

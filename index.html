@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Museumzine - Resources Page</title>
+        <!-- Here we have two separate stylesheets
+        one for our screen displays and one for users who want to print -->
+        <link rel="stylesheet" media="screen" href="css/styles.css">
+        <link rel="stylesheet" media="print" href="css/print.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,200&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Main naviation of site starts here -->
+        <header>
+            <nav class="nav-main">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/museumzine-logo.svg" alt="Image of museumzine logo" style="width:200px;">
+                    </a>
+                </div>
+                      <!-- This section lets user increase the font size, I followed the lecture on JS to implement this-->
+                <div id="font-size-edit">
+                    <span class="small" id="smallA">A</span>
+                    <span class="medium" id="mediumA">A</span>
+                    <span class="large" id="largeA">A</span>
+                </div>
+                <div class="btn-toggle-nav" onclick="openNavMenu()"></div>
+            </nav>
+            <!-- Button to open and close our navigation-->
+             <!-- The menu is hidden unless you click on the burger menu it is set to display:none to it doesn't intefere
+            with the layout-->
+
+            <div class="menu-hidden" tabindex="0">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="articles.html">Articles</a>
+                    </li>
+                    <li>
+                        <a href="education.html">Education</a>
+                    </li>
+                    <li>
+                        <a href="talks.html">Talks</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="resources.html">Resources</a>
+                    </li>
+                    <!--Creating a switch for color contrast-->
+                    <li>
+                <!-- This changes some of the colors in the layout, its a bit unstable and at the moment it doesn't toggle
+                back requiring you to refresh the page-->
+
+                        <p id="night-mode">Night Mode</p>
+                    </li>
+                </ul>
+            </div>
+            <!--End of main nav menu-->
+            <div class="index-title " tabindex="0">
+                <h1 tabindex="0">Museumzine
+                </h1 >
+                <h3 tabindex="0">Discover in this section a list of recommended
+                    <br>books about museums.
+                </h3>
+            </div>
+        </header>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!-- start of video content goes here -->
+        <!-- Video Highlights are selected videos from the web -->
+        <section class="video-highlight" tabindex="0">
+            <h2 tabindex="0">Video Highlights</h2>
+            <div class="video-spotlight-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dXePVz5gfyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+            <div id="video-highlight-items" tabindex="0">
+                <!-- https://youtu.be/dXePVz5gfyY
+        Catherine Opie Museums from home, site accessed March 15,2021 -->
+                <h4>
+                    Museums from home - Chatherine Opie
+                </h4>
+                <!--Section to download extra material from video-->
+                <div class="audio-version" tabindex="0">
+                    <img src="images/headphones.svg" alt="image of headphones icon" width="30">
+                    <p>
+                        <a href="assets/Museums-From-Home.mp3" target="_blank">audio version here</a>
+                    </p>
+                </div>
+                <div class="text-version" tabindex="0">
+                    <img src="images/text.svg" alt="image of text icon" width="30">
+                    <p>
+                        <a href="assets/Museums-From-Home.txt" target="_blank">Download text version here</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Video Selection are other videos but with less importance than the highlighted first-->
+        <div class="video-selection" tabindex="0">
+            <div class="video-selection-title">Video Selection</div>
+            <div class="item-1">
+                <iframe
+                    src="https://www.youtube.com/embed/sM2MOyonDsY"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+            <div class="item-2">
+                <iframe
+                    src="https://www.youtube.com/embed/iymqBTCUgKs"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+            <div class="item-3">
+                <iframe
+                    src="https://www.youtube.com/embed/yDaY6KraDW0"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+            <div class="item-4">
+                <iframe
+                    src="https://www.youtube.com/embed/gyIVCqf23cA"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+        <!-- start of museum spotlight content goes here - This section uses grid to showcase museum images -->
+        <section class="museum-spotlight" tabindex="0" aria-label="museum-spotlight">
+            <div id="spotlight-title">
+                <h2>Museum Spotlight</h2>
+            </div>
+            <div id="spotlight-text">
+                <p>Every month we showcase a museum, selected by our staff and present to you some of their main characteristics.</p>
+            </div>
+            <img id="museum-pic1" src="images/museum-pic.jpg" alt="Picture of a museum">
+            <img
+                id="museum-pic2"
+                src="images/museum-pic-2.jpg"
+                alt="Picture of a museum"
+                width="200"
+            >
+            <img
+                id="museum-pic3"
+                src="images/museum-pic3.jpg"
+                alt="Picture of a museum"
+                width="200"
+            >
+            <img id="museum-pic4" src="images/samlingar.png" alt="Picture of a samlingar an ancient scandinavian sculpture of a deer">
+            <img id="museum-pic5" src="images/museum.png" alt="Picture of a museum">
+        </section>
+        <!-- start of newsletter goes here , this is just a placeholder newsletter subscription, I added a JS alert for users
+        to feel some interaction if they insert or click on the submit button-->
+        <section class="newsletter" aria-label="newsletter" tabindex="0">
+            <div id="item3">
+                <h2 tabindex="0">Would you like to receive our newsletter?</h2>
+            </div>
+            <form>
+                <input
+                    id="newsletter-input"
+                    type="text"
+                    name="name"
+                    value="Enter email"
+                >
+                <input id="newsletter-btn" type="submit" value="Subscribe">
+            </form>
+        </section>
+        <!-- start of articles for mobile view only goes here - hm stands for home to differentiate from
+        other pages in the site's structure-->
+        <section class="hm-articles-section" aria-label="articles-section" tabindex="0">
+            <h2 tabindex="0">Selected Articles</h2>
+            <article class="article-item">
+                <div class="img-title">
+                    <img src="images/article-1.png" alt="image of article" width="90">
+                    <h3 tabindex="0">Why we need museums now more than ever</h3>
+                </div>
+                <details class="articles-detail">
+                    <summary tabindex="0">Summary</summary>
+                    <p tabindex="0">Museums are an important part of our day to day lives. In today's climate with the pandemic, having places where people can find peace and a time for relfection is crucial. Museums help us understand our history but also let us grasp our most intimate thoughts.</p>
+                </details>
+            </article>
+            <article class="article-item">
+                <div class="img-title">
+                    <img src="images/article-2.png" alt="image of article" width="90">
+                    <h3 tabindex="0"> Museums Post COVID-19</h3>
+                </div>
+                <details class="articles-detail">
+                    <summary tabindex="0">Summary</summary>
+                    <p tabindex="0">
+                        This article was the result of a team conversation about planning for a post COVID-19 future of museums.
+                    </p>
+                </details>
+            </article>
+            <article class="article-item">
+                <div class="img-title">
+                    <img src="images/article-3.png" alt="image of article" width="90">
+                    <h3 tabindex="0">Museums in Asia</h3>
+                </div>
+                <details class="articles-detail">
+                    <summary tabindex="0">Summary</summary>
+                    <p tabindex="0">
+                        Museums give countries, both developed and emerging, the ultimate cultural and education advantage.The number of museums and cultural institutions being constructed in Asian countries has recently increased, with many of them designed by well-known architects. This article will take a look a some of the emerging museums.
+                    </p>
+                </details>
+            </article>
+        </section>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!-- start of selected audio goes here 
+         sl stands for selected shorthand -->
+        <section class="sl-audio-section" tabindex="0" aria-label="Selected-Audio">
+            <!-- Add SVG Icon here! to go next to title-->
+            <div id="audio-picture"></div>
+            <h3 id="title" tabindex="0">SELECTED AUDIO LECTURE</h3>
+            <h4 id="subtitle" tabindex="0">For the Love of Mona Lisa</h4>
+            <p class="description" tabindex="0">
+                Allison Healy talks about the history of the 
+            Leonardo Davinci's Mona Lisa and explains the lasting 
+            effects it had on western culture
+            </p>
+            <audio controls tabindex="0">
+                <!-- Audio resource accesed from https://arthistoryforall.com/category/episodes/page/3 -->
+                <source src="horse.ogg" type="audio/ogg">
+                <source src="assets/mona-lisa.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <!-- Audio controls-->
+            <div class="text-version" style="margin-left:5%" tabindex="0">
+                <img src="images/text.svg" alt="image of text icon" width="30">
+                <p>
+                    <a href="assets/mona-lisa-transcript.rtf" target="_blank">Download text version here</a>
+                </p>
+            </div>
+        </section>
+        <!-- start of upcoming talks goes here  -->
+        <section class="upcoming-talks" aria-label="upcoming-talks" tabindex="0">
+            <div class="img-title">
+                <img src="images/headphones.svg" alt="image of headphones icons" width="20">
+                <h3 class="title" tabindex="0">UPCOMING TALKS</h3>
+            </div>
+            <p class="description" tabindex="0">We're presenting Culture Track at various conferences, panels, and virtual gatherings throughout the summer and fall.</p>
+            <a href="talks.html">
+                <button id="up-talks-btn" type="button" value="Past talks">Past talks</button>
+            </a>
+        </section>
+        <!--Footer starts here-->
+        <footer>
+            <div id="footer-logo">
+                <a href="index.html">
+                    <img src="images/museumzine-logo-footer.svg" alt="Image of museumzine logo" style="width:200px;">
+                </a>
+            </div>
+            <div id="footer-description">
+                Museumzine is a collection of articles, lectures and talks
+                for all those interested in museums and art
+            </div>
+            <div id="footer-nav">
+                <a href="articles.html">Articles</a>
+                <a href="education.html">Education</a>
+                <a href="talks.html">Talks</a>
+                <a href="about.html">About</a>
+                <a href="resources.html">Resources</a>
+                <a href="#top">Back to top</a>
+            </div>
+            <div id="contact">
+                To contact please reach out to
+                <a href="mailto:aaam4@student.london.ac.uk" target="_top" tabindex="0">aaam4@student.london.ac.uk</a>
+            </div>
+            <div id="copyright" tabindex="0">
+                (CC) 2021 Museumzine
+            This is a student project for the University of London’s Computer Science Program authored by Álvaro Álvarez
+            </div>
+        </footer>
+        <script src="js/main.js"></script>
+    </body>
+</html>

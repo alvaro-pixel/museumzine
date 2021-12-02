@@ -1,0 +1,2667 @@
+/*
+Read this
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Organizing*/
+
+/* || General styles */
+
+/*For colors I decided to use global variables, accent color is the 
+main color of the site, tested for accesiblity, in the next steps when I use
+JS to allow users to change the color palette of the site, this will be helpful */
+
+:root {
+  /*Colors for navigation menu and site*/
+  --accent: #006443;
+  --secondary-green: #019F54;
+  --visited: #F05600;
+  --hover: #9F008F;
+  --active: #222222;
+  --light-bg: #fff6eb;
+  --grey-bg: #dcd9d3;
+  --light-title: #fff;
+
+  /*Colors for footer only!*/
+  --accent-footer: #fff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+ul{
+  list-style: none;
+}
+
+body {
+  /*Hide horizontal scrolling */
+  overflow-x: hidden;
+  /* Hide horizontal scrollbar */
+  background-color: var(--light-bg);
+}
+
+/* Font colors for normal mode */
+
+p, h2, h3, h4 {
+  color: black
+}
+
+
+
+/*Background color for black mode */
+
+.background-night-mode {
+  background-color: var(--active);
+}
+
+.font-color-night {
+  color: var(--light-bg);
+}
+
+#night-mode {
+  cursor: pointer;
+}
+
+
+
+a:link {
+  color: var(--accent);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--visited);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--hover);
+  background-color: transparent;
+  text-decoration: dotted;
+}
+
+a:active {
+  color: var(--active);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.spacer {
+  height: 35px;
+}
+
+.article-spacer
+{
+  height: 135px;
+}
+
+/* || Typography */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Roboto:wght@100&display=swap');
+h1, h2, h3, h4 {
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+p, a, li {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-weight: 300 !important;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+/* || Header and Main Navigation */
+
+.nav-main {
+  margin-top: 0%;
+  width: 100%;
+  height: 60px;
+  background-color:var(--light-title);
+  display: flex;
+  flex-direction: row;
+  z-index: 1000;
+  justify-content: space-between;
+  position: fixed;
+}
+.nav-main-nightmode {
+  margin-top: 0%;
+  width: 100%;
+  height: 60px;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  z-index: 1000;
+  justify-content: space-between;
+}
+.nav-main .logo {
+  display: flex;
+  align-content: center;
+  align-items:flex-end;
+}
+
+/*This button is what we traditionally recognize as the burger button
+it is there for users to access the main navigation of the site */
+.btn-toggle-nav {
+  width: 10%;
+  height: 100%;
+  background-image: url("../images/burger-menu.svg");
+  background-repeat: no-repeat;
+  margin-top: 10px;
+  background-size: 90%;
+  cursor: pointer;
+  display: flex;
+  align-content: center;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 1000;
+}
+
+.menu-hidden {
+  visibility: hidden;
+  background-color:var(--grey-bg);
+  width: 100%;
+  height: auto;
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  padding-top: 8%;
+  top: 0;
+  text-align: center;
+}
+
+.menu-hidden ul{
+  list-style: none;
+  padding-left:2%;
+}
+.menu-hidden a {
+  text-align: center;
+  padding-top: 1%;
+  flex-direction: column;
+  list-style-type: none;
+  display: flex;
+  flex-flow: column;
+  /* When on small sized screens, wthis distributes the space between items */
+  list-style-type: none;
+  justify-content: space-around;
+}  
+
+.nav-main #font-size-edit {
+  display: flex;
+  align-self: center;
+  cursor: pointer;
+}
+
+/* || Footer Navigation  */
+
+footer{
+  background-color: var(--accent);
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+}
+
+#footer-logo{
+  margin-top: 2%;
+}
+footer #footer-description
+{
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: var(--accent-footer);
+  margin-bottom: 3%;
+}
+
+footer #footer-nav
+{
+  
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3%;
+  
+}
+
+footer #contact{
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: var(--accent-footer)
+}
+
+footer #contact a{
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: var(--visited);
+}
+
+footer #copyright{
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: var(--accent-footer)
+}
+
+#footer-nav a:link{
+  color:var(--accent-footer)
+}
+
+
+
+/* || Mobile design only */
+
+/* This is the point were our styles get applied to  mobile device displays*/
+
+@media only screen and (min-width: 320px) {
+  
+ 
+
+ /*Letters to change the text size of body - Accesibility */ 
+
+  .small {
+    font-size: 1em;
+  }
+  .medium {
+    font-size: 1.3em;
+  }
+  .large {
+    font-size: 1.5em;
+  }
+
+
+  .index-title {
+    /* Background image of a museum top be added */
+    background-color: var(--accent);
+    background-image: url("../images/test-bg.png");
+    background-size: cover;
+    height: 650px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 0px;
+    padding-top: 0px
+  }
+  .index-title h1 {
+    margin-top: 200px;
+    overflow-wrap: break-word;
+    margin-left: 5%;
+    background-color:var(--light-title);
+    width: max-content;
+  }
+  .index-title h3 {
+    margin-top: 5%;
+    line-height: 1.5;
+    margin-left: 5%;
+    width: 90%;
+    overflow-wrap: break-word;
+    background-color:var(--light-title);
+  }
+/*Backroung for education */
+.index-title-education-page {
+  background-color: var(--accent);
+  background-image: url("../images/education-bg.webp");
+  background-size: cover;
+  width: 100%;
+  height: 650px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 0px;
+  padding-top: 0px;
+}
+  .index-title-education-page h1 {
+    margin-top: 200px;
+    overflow-wrap: break-word;
+    margin-left: 5%;
+    background-color:var(--light-title);
+    width: max-content;
+  }
+
+  .index-title-education-page h3 {
+    margin-top: 5%;
+    line-height: 1.5;
+    margin-left: 5%;
+    width: 90%;
+    overflow-wrap: break-word;
+    background-color:var(--light-title);
+  }
+
+
+  /* Breadcrumbs (They are found in every page except for main */
+  .breadcrumbs-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 5%;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+  .breadcrumbs-nav a p {
+    font-size: 14px;
+    color: coral;
+  }
+
+
+  /* Video Higlight Section */
+
+  .video-spotlight-container
+  {
+    padding-left: 5%;
+  }
+
+  .video-highlight {
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+  }
+  .video-highlight h2 {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    margin-left: 5%;
+  }
+  .video-highlight video {
+    width: 90%;
+    height: 240px;
+    margin-left: 5%;
+    border-radius: 5px;
+  }
+  .video-highlight #video-highlight-items {
+    margin-left: 5%;
+  }
+  .video-highlight #video-highlight-items h4 {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  }
+  .audio-version {
+    display: flex;
+  }
+  .audio-version p {
+    padding-left: 3%;
+  }
+  .text-version {
+    display: flex;
+  }
+  .text-version p {
+    padding-left: 3%;
+  }
+
+    /* End of Video Higlight Section */
+
+  /*Video selection section*/
+  .video-selection
+  {
+    background-color: var(--grey-bg);
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    height: auto;
+    display: none;
+
+
+  }
+
+  .video-selection iframe
+  {
+    width: 400%;
+  }
+
+  .video-selection .video-selection-title{
+    grid-row: 1;
+    margin-left: 5%;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+  }
+
+  .video-selection .item-1{
+    margin-top: 5%;
+    grid-row: 2;
+    margin-left: 5%;
+
+
+  }
+
+  .video-selection .item-2{
+    grid-row: 3;
+    margin-left: 5%;
+
+
+  }
+
+  .video-selection .item-3{
+    grid-row: 4;
+    margin-left: 5%;
+
+  }
+
+  .video-selection .item-4{
+    grid-row: 5;
+    margin-left: 5%;
+    margin-bottom: 5%;
+
+  }
+
+  
+  /*End of video selection section */
+
+
+  .museum-spotlight #museum-pic4
+    {display: none;}
+  
+  /* Museum Spotlight Section Mobile - This section uses grid layout */
+  .museum-spotlight {
+    display: grid;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 5%;
+    height: auto;
+    width: 90%;
+    /*       grid-template-columns: 5% 55% 40% 0% 0%;
+        grid-template-rows: 30% 15% 15% 20% 10%;
+ */
+  }
+  .museum-spotlight #spotlight-title {
+    grid-row: 1;
+  }
+  .museum-spotlight #spotlight-text {
+    grid-row: 2;
+  }
+  .museum-spotlight #museum-pic1 {
+    grid-row: 3;
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  .museum-spotlight #museum-pic2 {
+    width: 100%;
+    grid-row: 4;
+    margin-bottom: 2%;
+  }
+  .museum-spotlight #museum-pic3 {
+    grid-row: 5;
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  .museum-spotlight #museum-pic5 {
+    display: none;
+  }
+  /*Grid for mobile only - End of section */
+  /* Newsletter Section */
+  .newsletter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: var(--accent);
+    height: 250px;
+  }
+  .newsletter #item3 h2 {
+    display: flex;
+    color: mintcream;
+    letter-spacing: 0px;
+    width: 400.85px;
+    font-size: 25px;
+    text-align: center;
+  }
+  .newsletter #newsletter-input {
+    display: flex;
+    width: 300px;
+    height: 30px;
+    font-size: 14px;
+    font-style: italic;
+  }
+  .newsletter #newsletter-btn {
+    display: flex;
+    margin-top: 2%;
+    background-color: turquoise;
+    height: 40px;
+    width: 310px;
+    border-style: none;
+    color: mintcream;
+  }
+
+  .newsletter-singular-articles
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: var(--secondary-green);
+    height: 250px;
+  }
+
+  .newsletter-singular-articles #item3 h2 {
+    display: flex;
+    color: mintcream;
+    letter-spacing: 0px;
+    width: 400.85px;
+    font-size: 25px;
+    text-align: center;
+  }
+  .newsletter-singular-articles #newsletter-input {
+    display: flex;
+    width: 300px;
+    height: 30px;
+    font-size: 14px;
+    font-style: italic;
+  }
+  .newsletter-singular-articles #newsletter-btn {
+    display: flex;
+    margin-top: 2%;
+    background-color: turquoise;
+    height: 40px;
+    width: 310px;
+    border-style: none;
+    color: mintcream;
+  }
+
+  
+  /* Home Articles Section */
+
+  .hm-articles-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    height: auto;
+  }
+  .hm-articles-section h3 {
+    font-size: 18px;
+    width: 200%;
+  }
+  .hm-articles-section h2 {
+    padding-top: 5%;
+    margin-left: 5%;
+    font-size: 25px;
+  }
+  .hm-articles-section .article-item {
+    margin-left: 5%;
+  }
+  .hm-articles-section .articles-detail {
+    padding-bottom: 3%;
+  }
+  .hm-articles-section img {
+    padding-right: 5%;
+  }
+  .hm-articles-section .img-title {
+    display: flex;
+    flex-direction: row;
+    
+  }
+  .hm-articles-section .article-item {
+    padding-bottom: 5%;
+  }
+
+  summary {
+    cursor: pointer;
+  }
+  /*Hide this section of selected articles since they are only for tablet and destkop views */
+  .selected-articles {
+    display: none;
+  }
+  /* Selected Audio Section */
+  .sl-audio-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .sl-audio-section .title, #subtitle, .description {
+    padding-left: 5%;
+  }
+  .sl-audio-section h3 {
+    margin-left: 5%;
+  }
+  /*Photo by Fringer Cat: https://unsplash.com/photos/hddmXlPaFGo*/
+  #audio-picture {
+    background-image: url("../images/mona-lisa.jpg");
+    background-size: cover;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-color: lightgray;
+    height: 300px;
+    display: flex;
+    margin-left: 5%;
+    flex-direction: column;
+  }
+  audio {
+    width: 60%;
+    margin-left: 5%
+  }
+  /*End of audio section */
+  /* Selected Upcoming Talks Section */
+  .upcoming-talks {
+    /*Photo by Fringer Cat: https://unsplash.com/photos/hddmXlPaFGo*/
+    background-image: url("../images/fringer-cat-radio-studio-min.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: lightgray;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+  }
+  .upcoming-talks .img-title {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    margin-top: 10%;
+  }
+  .upcoming-talks .img-title h3 {
+    margin-left: 3%;
+  }
+  .upcoming-talks #up-talks-btn {
+    background-color: var(--accent);
+    font-size: 20px;
+    color:var(--light-title);
+    width: 200px;
+    height: 55px;
+    margin-left: 5%;
+    border-style: none;
+    margin-top: 10%;
+  }
+  .upcoming-talks #up-talks-btn a {
+  
+    color:var(--light-title);
+   
+  }
+  
+  
+}
+
+/* ||  Article Page - Article Box */
+
+/*Index title articles page */
+
+.index-title-articles-page
+{
+    background-image: url("../images/articles-bg.jpeg");
+    background-color: var(--accent);
+    height: 700px;
+    width: 1300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 0%;
+    padding-top: 0px;
+
+}
+
+
+  .index-title-articles-page h1 {
+    margin-top: 200px;
+    overflow-wrap: break-word;
+    margin-left: 5%;
+    background-color:var(--light-title);
+    width: max-content;
+  }
+
+  .index-title-articles-page h3 {
+    margin-top: 5%;
+    line-height: 1.5;
+    margin-left: 5%;
+    width: 90%;
+    overflow-wrap: break-word;
+    background-color:var(--light-title);
+  }
+
+#article-box-1 {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  background-color: #EEEEEE;
+  margin-left: 5%;
+  border-radius: 5px;
+  background-size: cover;
+  background-image: url("../images/why-we-need-museums.jpg");
+}
+
+.article-box-2 {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  background-color: #EEEEEE;
+  margin-left: 5%;
+  border-radius: 5px;
+  background-size: cover;
+  background-image: url("../images/designing-a-museum.jpg");
+}
+
+#article-box-3 {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  background-color: #EEEEEE;
+  margin-left: 5%;
+  background-size: cover;
+  border-radius: 5px;
+  background-image: url("../images/museums-in-asia.jpg");
+}
+
+.articles .title-graph {
+  display: flex;
+  background-color: var(--accent);
+  height: 120px;
+  /* top-left | top-right-and-bottom-left | bottom-right */
+  border-radius: 5px 5px 0px 0px;
+  align-items: center;
+  align-content: center;
+}
+
+.articles .title-graph h3 {
+  display: flex;
+  align-content: space-between;
+  color:var(--light-title);
+  padding-left: 5%;
+}
+
+.articles img {
+  padding-left: 5%;
+}
+
+.articles .read-article-btn {
+  width: 187px;
+  height: 54px;
+  font-size: 20px;
+  margin-top: 5%;
+  margin-left: 5%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+}
+
+/* || > Article Details Page - CSS Styles for individual articles page */
+
+.article-section {
+  padding-left: 5%;
+  width: 85%;
+}
+
+.article-detail p {
+  padding-left: 5%;
+  width: 85%;
+  line-height: 1.5;
+}
+
+.articles-section .article-detail h3 {
+  margin-left: 5%;
+}
+
+  .time-description {
+    background-color: var(--secondary-green);
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    display: flex;
+    height: 40px;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .time-description img{
+    margin-right: 2%;
+    width: 8%;
+  }
+
+  .time-description p{
+    color: var(--light-title)
+  }
+
+  .time-description-single-article {
+    background-color: var(--secondary-green);
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    display: flex;
+    height: 40px;
+    width: 268px;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5%;
+    border-radius: 20px;
+  }
+
+  .time-description-single-article img {
+    width: 400px;
+  }
+
+  .time-description-single-article p {
+    color: var(--light-title);
+    
+  }
+
+  .time-description-single-article img{
+    width: 8%;
+    margin-left: 5%;
+  }
+
+  .social-media
+  {
+    display: flex;
+    width: 160px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding-left: 5%;
+  }
+
+  .social-media img
+  {
+    width: 70px;
+    margin-right: 5%;
+  }
+/* || > Education Page  */
+
+
+.oc-title-box {
+  display: flex;
+  align-content: center;
+  background-color: var(--accent);
+  height: 65px;
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 5px;
+  color:var(--light-title);
+}
+
+.oc-title-box h3 {
+  margin-left: 2%;
+  color:var(--light-title);
+}
+
+.open-courses p {
+  margin-left: 5%;
+  width: 70%;
+  line-height: 1.5;
+}
+
+.oc-course-box-1 {
+	height: 114px;
+	width: 90%;
+	margin-left: 5%;
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin-bottom: 3%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	background-color: var(--light-title);
+	justify-content: space-evenly;
+}
+
+.oc-course-box-1:hover {
+	height: 114px;
+	width: 90%;
+	margin-left: 5%;
+	border: 2px solid var(--hover);
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin-bottom: 3%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	background-color: var(--light-title);
+	justify-content: space-evenly;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.oc-course-box-1 h3 {
+	font-size: 18px;
+	width: 87%;
+}
+
+
+.pc-title-box {
+  display: flex;
+  align-content: center;
+  background-color: var(--accent);
+  height: 65px;
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 5px;
+  color:var(--light-title);
+  
+}
+
+.pc-title-box h3 {
+  margin-left: 2%;
+  color: var(--light-title);
+}
+
+.paid-courses p {
+  margin-left: 5%;
+  width: 70%;
+  line-height: 1.5;
+}
+
+.pc-course-box {
+  height: 114px;
+  margin-left: 5%;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--light-title);
+
+}
+
+.pc-course-box:hover {
+  height: 114px;
+  margin-left: 5%;
+  border: 1px solid var(--hover);
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--light-title);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+
+}
+
+.pc-course-box .pc-box-content h3 {
+  margin-left: 5%;
+  width: 300px;
+}
+
+.pc-course-box .pc-box-content p {
+  margin-left: 5%;
+  width: 300px;
+  margin-top: 0%;
+}
+
+.pc-course-box img {
+  margin-right: 5%;
+}
+
+.pc-box-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.quote {
+  width: 363px;
+  height: 500px;
+  padding-left: 5%;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 182.99%;
+  /* or 66px */
+  color: #000000;
+}
+
+.thought-submit {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+}
+
+#course-picture {
+  width: 400px;
+  height: 350px;
+  margin: 3% 5% 5%;
+  background-color: wheat;
+  background-image: url(../images/Tate-Pop-art-GBPhotos-06_banner.jpg);
+  background-size: cover;
+}
+
+#course-picture-2 {
+  width: 400px;
+  height: 350px;
+  margin: 3% 5% 5%;
+  background-color: wheat;
+  background-image: url(../images/museum-studies.jpg);
+  background-size: cover;
+}
+
+/* || > Talks Page  */
+
+.index-title-talks-page
+{
+    background-image: url("../images/talks.jpeg");
+    background-color: var(--accent);
+    height: 700px;
+    width: 1300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 0%;
+    padding-top: 0px;
+
+}
+
+
+  .index-title-talks-page h1 {
+    margin-top: 200px;
+    overflow-wrap: break-word;
+    margin-left: 5%;
+    background-color:var(--light-title);
+    width: max-content;
+  }
+
+  .index-title-talks-page h3 {
+    margin-top: 5%;
+    line-height: 1.5;
+    margin-left: 5%;
+    width: 90%;
+    overflow-wrap: break-word;
+    background-color:var(--light-title);
+  }
+
+.talks {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+}
+
+.talks .talks-img-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.talks .talks-publication-date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: space-around;
+  margin-bottom: 3%;
+}
+
+.talks .talks-description {
+  display: flex;
+  flex-direction: column;
+  line-height: 2.5;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 95%;
+}
+
+.talks .talks-description .title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #8A2BE2;
+}
+
+.extra-talks {
+	display: flex;
+	flex-direction: column;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-left: 5%;
+	margin-left: 2%;
+	width: 90%;
+	background: var(--light-title);
+	border-radius: 5px;
+}
+
+.extra-talks .extra-talks-publication {
+  display: flex;
+  flex-direction: row;
+}
+
+.extra-talks .extra-talk-content {
+  display: flex;
+  flex-direction: row;
+  line-height: 2.0;
+  width: 90%;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.more-talks-row {
+  display: flex;
+  flex-direction: row;
+  color: #8A2BE2;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.extra-talks .extra-talk-content p {
+  width: 75%;
+}
+
+/* || > About page 
+This page describes the main purpose of the site, it also talks a bit about my role in the 
+project and why I chose museum and art as ta them for this website*/
+
+.index-title-about-page
+{
+    background-image: url("../images/about.webp");
+    background-color: var(--accent);
+    height: 700px;
+    width: 1300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 0%;
+    padding-top: 0px;
+
+}
+
+
+  .index-title-about-page h1 {
+    margin-top: 200px;
+    overflow-wrap: break-word;
+    margin-left: 5%;
+    background-color:var(--light-title);
+    width: max-content;
+  }
+
+  .index-title-about-page h3 {
+    margin-top: 5%;
+    line-height: 1.5;
+    margin-left: 5%;
+    width: 90%;
+    overflow-wrap: break-word;
+    background-color:var(--light-title);
+  }
+
+
+
+.about-page-body
+{
+  background-color: var(--light-title);
+}
+
+.about-intro h3 {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  padding-left: 5%;
+}
+
+.about-me img {
+  width: 50%;
+  margin-left: 5%;
+  
+}
+
+.about-intro p {
+  line-height: 2.0;
+  margin-left: 5%;
+  width: 85%;
+}
+
+.about-me h3 {
+  line-height: 2.0;
+  margin-left: 10%;
+  width: 100%;
+}
+
+.about-intro h2 {
+  font-size: 30px;
+  margin-left: 5%
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--accent);
+}
+
+.about-me p {
+  width: 90%;
+  line-height: 2.0;
+  color:var(--light-title);
+  margin-bottom: 5%;
+}
+.about-me h3 {
+  
+  color:var(--light-title);
+}
+
+.about-me img {
+  width: 40%;
+  margin-top: 5%;
+}
+
+
+
+.help-separator {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  height: 10px;
+  background-color: var(--accent);
+  border-style: none;
+}
+
+.helping-museums .help-title {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+
+.helping-museums h2 {
+  font-size: 30px;
+  margin-left: 5%;
+}
+
+.helping-museums .help-title p {
+  margin-left: 5%
+}
+
+.helping-museums .help-title a {
+  margin-left: 5%
+}
+
+.helping-museums .how-to-help {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  line-height: 1.5;
+  align-items: center;
+}
+
+.helping-museums .how-to-help p {
+  margin-left: 5%;
+}
+
+.helping-museums .how-to-help h3 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+  width: 90%
+}
+
+.how-to-help .image-title {
+  display: flex;
+  flex-direction: row;
+  align-self: stretch;
+  margin-left: 5%;
+}
+
+.how-to-site .how-to-title h3 {
+  font-size: 30px;
+  display: flex;
+  margin-left: 5%;
+  flex-direction: column;
+  width: 90%;
+}
+
+.how-to-site .how-to-box {
+  background-color: #F7EEFF;
+  border-radius: 5px;
+  width: 90%;
+  margin-left: 5%;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.background-color-night {
+  background-color: lightcoral;
+  border-radius: 5px;
+  width: 90%;
+  margin-left: 5%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.how-to-site .how-to-box p {
+  margin-left: 5%;
+  line-height: 1.5;
+  width: 90%;
+}
+
+.how-to-site .how-to-box h3 {
+  margin-bottom: -2%;
+  margin-left: 5%;
+}
+
+
+/* || > Resources Page  - This page is the one that has more time invested in JS, 
+the idea here was to store the lists of recommended book by categories (theory, design, history) and
+allow users to toggle between the lists, it's a simple implementation but one key benefit is
+that the lists can be updated in their arrays without the need to write the code for each of them in
+the page's body */
+
+.index-title-resources-page
+{
+    background-image: url("../images/resources.webp");
+    background-color: var(--accent);
+    height: 700px;
+    width: 1300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 0%;
+    padding-top: 0px;
+
+}
+
+
+.index-title-resources-page h1 {
+    margin-top: 200px;
+    overflow-wrap: break-word;
+    margin-left: 5%;
+    background-color:var(--light-title);
+    width: max-content;
+  }
+
+  .index-title-resources-page h3 {
+    margin-top: 5%;
+    line-height: 1.5;
+    margin-left: 5%;
+    width: 90%;
+    overflow-wrap: break-word;
+    background-color:var(--light-title);
+  }
+
+
+.book-categories {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+  align-items: center;
+}
+
+.book-categories p {
+  margin-left: 5%;
+}
+
+.book-content h3 {
+  margin-left: 5%;
+}
+
+.book-categories .book-content {
+  margin-left: 2%;
+}
+
+/* Here you will find the displayed list according to the category selected */
+
+.category-by-books {
+  display: flex;
+  flex-direction: row;
+}
+
+.category-by-books img {
+  margin-left: 5%;
+  align-self: baseline;
+  padding-top: 3%;
+}
+
+.category-by-books .category-content h2 {
+  font-size: 20px;
+}
+
+.category-by-books .category-content p {
+  margin-left: 5%;
+}
+
+.category-by-books .category-content #btn-categor-details {
+  margin-left: 5%;
+  background-color: var(--accent);
+  font-family: Arial, Helvetica, sans-serif;
+  color:var(--light-title);
+  border-radius: 4px;
+  width: 120px;
+  height: 34px;
+  border-style: none;
+  font-size: 18px;
+}
+
+.category-by-books .category-content hr {
+  margin-left: 5%;
+  width: 300px;
+  margin-bottom: 5%;
+  border: 0.5px solid var(--accent);
+}
+
+.category-content h2 {
+  margin-left: 5%;
+}
+
+#btn-categor-details {
+  margin-bottom: 5%;
+}
+
+.theory-books-mobile h3 {
+  margin-left: 5%;
+}
+
+/*Remove Category selection from mobile view*/
+
+.book-categories-columns {
+  display: none;
+}
+
+#btn-categor-details
+{
+  background-color: var(--accent);
+  width: 100px;
+  height: 50px;
+  color: var(--light-title);
+  font-family: 'Poppins',Arial, Helvetica, sans-serif;
+  border-style: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#btn-categor-details:hover
+{
+  background-color: var(--hover);
+  width: 100px;
+  height: 50px;
+  color: var(--light-title);
+  font-family: 'Poppins',Arial, Helvetica, sans-serif;
+  border-style: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/*Up to this point we have responsive sizes for mobile devices*/
+
+@media only screen and (min-width: 600px) {
+
+ .hm-articles-section
+ {
+   display:none;
+ }
+
+  .btn-toggle-nav {
+    width: 7%;
+  
+}
+
+  .index-title {
+    /* Background image of a museum from Toptal Subtle Patterns */
+    background-color: var(--accent);
+    background-image:url('../images/test-bg.png');
+    height: 650px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 0px;
+    padding-top: 0px
+  }
+  .index-title h1 {
+    margin-top: 200px;
+    margin-left: 5%;
+    font-size: 40px;
+  }
+  .index-title h3 {
+    margin-top: 5%;
+    width: 60%;
+    line-height: 1.5;
+    margin-left: 5%;
+    font-size: 25px;
+  }
+  /*Style for navigation menu - fixed top padding */
+
+  .menu-hidden {
+    padding-top: 6%;
+  }
+
+  
+  /* Video Higlight Section */
+  .video-highlight h2 {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    margin-left: 5%;
+  }
+  .video-highlight video {
+    width: 400px;
+    height: 240px;
+    margin-left: 5%;
+    border-radius: 5px;
+  }
+  .video-highlight #video-highlight-items {
+    margin-left: 5%;
+  }
+  .video-highlight #video-highlight-items h4 {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .audio-version {
+    display: flex;
+  }
+  .audio-version p {
+    padding-left: 3%;
+  }
+  .text-version {
+    display: flex;
+  }
+  .text-version p {
+    padding-left: 3%;
+  }
+  /* Video Higlight Section */
+ 
+
+
+  /*Video selection section*/
+  .video-selection
+  {
+    background-color: var(--grey-bg);
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows:25% 25% 25% 25%;
+    height: auto;
+    display: none;
+
+  }
+
+  .video-selection .video-selection-title {
+    grid-row: 1;
+    margin-left: 5%;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    width: 400%;
+    display: flex;
+    justify-content: center;
+  }
+
+.video-selection .item-1 {
+	margin-top: 5%;
+	grid-row: 2;
+	margin-left: 22%;
+	width: 600px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 5%;
+}
+
+.video-selection .item-2 {
+	margin-top: 5%;
+	grid-row: 3;
+	margin-left: 86%;
+	width: 600px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 5%;
+}
+
+.video-selection .item-3 {
+	margin-top: 5%;
+	grid-row: 4;
+	margin-left: 5%;
+	width: 600px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 5%;
+}
+
+.video-selection .item-4 {
+	margin-top: 5%;
+	grid-row: 5;
+	margin-left: 90%;
+	width: 600px;
+	display: flex;
+	justify-content: start;
+	margin-bottom: 5%;
+}
+
+  
+  /*End of video selection section */
+
+  
+  /* Museum Spotlight Section Tablet - This section uses grid layout */
+  .museum-spotlight #spotlight-title {
+    grid-row: 1;
+  }
+  .museum-spotlight #spotlight-text {
+    grid-row: 2;
+  }
+  .museum-spotlight #museum-pic1 {
+    grid-row: 3;
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  .museum-spotlight #museum-pic2 {
+    grid-row: 4;
+    margin-bottom: 2%;
+  }
+  .museum-spotlight #museum-pic3 {
+    grid-row: 5;
+    margin-bottom: 2%;
+  }
+  .museum-spotlight #museum-pic4 {
+    display: none;
+  }
+  /*Grid for mobile only - End of section */
+  /* Newsletter Section */
+  .newsletter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: var(--accent);
+    height: 250px;
+  }
+  .newsletter #item3 h2 {
+    display: flex;
+    color: mintcream;
+    letter-spacing: 0px;
+    width: 400.85px;
+    text-align: center;
+  }
+  .newsletter #newsletter-input {
+    display: flex;
+    width: 300px;
+    height: 30px;
+    font-size: 14px;
+    font-style: italic;
+  }
+  .newsletter #newsletter-btn {
+    display: flex;
+    margin-top: 2%;
+    background-color: turquoise;
+    height: 40px;
+    width: 310px;
+    border-style: none;
+    color: mintcream;
+  }
+  /* Home Articles Section 
+  This section is different for tablet and desktop views and uses other clases*/
+  
+  /* Home Articles Section For desktop */
+  .selected-articles {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 4 00px;
+  }
+  .selected-articles #section-title h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .selected-articles .columns-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 5%;
+  }
+  .selected-articles .articles-columns {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding-left: 5%;
+  }
+  .selected-articles .columns-row .articles-columns h3 {
+    padding-left: 0%;
+  }
+  /* Selected Audio Section */
+  .sl-audio-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .sl-audio-section .title, #subtitle, .description {
+    padding-left: 5%;
+  }
+  /* Selected Upcoming Talks Section */
+  .upcoming-talks {
+    background-color: lightgray;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+  }
+  .upcoming-talks .img-title {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    margin-top: 10%;
+  }
+  .upcoming-talks .img-title h3 {
+    margin-left: 3%;
+  }
+  
+  
+  /* || > Article Page - Article Box */
+  .articles-section {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 400px;
+    align-content: center;
+    /* margin-left: 5%; */
+    justify-content: space-evenly;
+  }
+  #article-box {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    height: 200px;
+    background-color: #EEEEEE;
+    border-radius: 5px;
+  }
+  .articles .title-graph {
+    display: flex;
+    background-color: var(--accent);
+    height: 60px;
+    /* top-left | top-right-and-bottom-left | bottom-right */
+    border-radius: 5px 5px 0px 0px;
+    align-items: center;
+    align-content: center;
+  }
+  .articles .title-graph h3 {
+    display: flex;
+    align-content: space-between;
+    color: var(--light-title);
+  }
+  .articles img {
+    padding-left: 5%;
+  }
+  .articles .read-article-btn {
+    width: 150px;
+    height: 45px;
+    font-size: 20px;
+    margin-top: 5%;
+    margin-left: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+  }
+  /* || > Article Details Page - CSS Styles for individual articles page */
+  .article-section {
+    padding-left: 5%;
+    width: 85%;
+  }
+  .article-detail p {
+    padding-left: 5%;
+    width: 85%;
+    line-height: 1.5;
+  }
+  .articles-section .article-detail h3 {
+    margin-left: 5%;
+  }
+  .articles-section {
+    display: flex;
+    flex-flow: row nowrap;
+    height: auto;
+    align-content: center;
+    /* margin-left: 5%; */
+    justify-content: space-evenly;
+  }
+  /* || > Education Page  */
+ 
+  /* || > Talks Page  */
+  .talks {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+  }
+  .talks .talks-img-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .talks .talks-publication-date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-around;
+    margin-bottom: 3%;
+  }
+  .talks .talks-description {
+    display: flex;
+    flex-direction: column;
+    line-height: 2.5;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 95%;
+  }
+  .talks .talks-description .title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #8A2BE2;
+  }
+  
+  /* || > About page */
+  
+  }
+  /* Here you will find the displayed list according to the category selected */
+  .category-by-books {
+    display: flex;
+    flex-direction: row;
+  }
+  .category-by-books img {
+    margin-left: 5%;
+    align-self: baseline;
+    padding-top: 3%;
+  }
+  .category-by-books .category-content h2 {
+    font-size: 20px;
+  }
+  .category-by-books .category-content p {
+    margin-left: 5%;
+  }
+  .category-by-books .category-content #btn-categor-details {
+    margin-left: 5%;
+    background-color: var(--accent);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--light-title);
+    border-radius: 4px;
+    width: 120px;
+    height: 34px;
+    border-style: none;
+    font-size: 18px;
+  }
+  .category-by-books .category-content hr {
+    margin-left: 5%;
+    width: 300px;
+    margin-bottom: 5%;
+    border: 0.5px solid var(--accent);
+  }
+  /*Hides books categories only for row view */
+  .book-categories {
+    display: none;
+  }
+  /*Book categories only displayed in tablet and desktop in columns */
+  .book-categories-columns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    /* align-content: flex-end; */
+    /* align-items: ; */
+    margin-left: 5%;
+  }
+  .book-categories-columns .item-1 {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  .book-categories-columns .book-content h3 {
+    margin-left: 0%;
+  }
+  .book-categories-columns .book-content p {
+    width: 70%;
+  }
+  /*Up to this point we have responsive sizes for tablet and desktop devices*/
+  @media only screen and (min-width: 900px) {
+
+     .btn-toggle-nav {
+      width: 5%;
+    
+  }
+
+  
+
+    .index-title {
+      /* Background image of a museum from Toptal Subtle Patterns */
+      background-color: var(--accent);
+      height: 650px;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-left: 0px;
+      padding-top: 0px
+    }
+    .index-title h1 {
+      margin-top: 200px;
+      margin-left: 5%;
+      font-size: 40px;
+    }
+    .index-title h3 {
+      margin-top: 5%;
+      width: 60%;
+      line-height: 1.5;
+      margin-left: 5%;
+      font-size: 25px;
+    }
+    
+    /* Museum Spotlight Section Tablet and desktop - This section uses grid layout */
+    .museum-spotlight {
+      display: grid;
+      margin-top: 10%;
+      margin-bottom: 10%;
+      margin-left: 5%;
+      height: auto;
+      width: 90%;
+      grid-template-columns: 25% 5% 20% 25% 25%;
+      grid-template-rows: 30% 15% 15% 20% 10%;
+    }
+    .museum-spotlight #spotlight-title {
+      grid-row: 1;
+    }
+    .museum-spotlight #spotlight-text {
+      grid-row: 2;
+    }
+    .museum-spotlight #museum-pic1 {
+      grid-row: 2;
+      grid-column: 3;
+      width: 100%;
+      margin-bottom: 2%;
+    }
+    .museum-spotlight #museum-pic2 {
+      grid-row: 2;
+      grid-column: 4;
+      margin-bottom: 2%;
+    }
+    .museum-spotlight #museum-pic3 {
+      grid-column: 5;
+      grid-row: 2;
+      margin-bottom: 2%;
+    }
+    .museum-spotlight #museum-pic4 {
+      display: grid;
+      grid-column: 3;
+      grid-row: 2;
+      margin-bottom: 2%;
+      width: 100%;
+      padding-top: 151px;
+    }
+    .museum-spotlight #museum-pic5 {
+      display: grid;
+      grid-row: 2;
+      grid-column: 5;
+      padding-top: 170px;
+      width: 250px;
+      
+    }
+
+
+    /*Video selection section*/
+
+    .video-selection iframe {
+      width: 400%;
+      height: 120%;
+    }
+
+  .video-selection
+  {
+    background-color: var(--grey-bg);
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows:20% 30% 30% 20%;
+    height: 600px;
+
+  }
+
+  .video-selection .video-selection-title {
+    grid-row: 3;
+    margin-left: 21%;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1;
+  }
+
+  .video-selection .item-1 {
+    margin-top: 5%;
+    grid-row: 2;
+    margin-left: 5%;
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+    grid-column: 2;
+  }
+
+  .video-selection .item-2 {
+    margin-top: 5%;
+    grid-row: 3;
+    margin-left: 5%;
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+    grid-column: 2;
+  }
+
+  .video-selection .item-3 {
+    margin-top: 5%;
+    grid-row: 2;
+    margin-left: 52%;
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+    grid-column: 3;
+  }
+
+.video-selection .item-4 {
+	margin-top: 5%;
+	grid-row: 3;
+	margin-left: -48%;
+	width: 300px;
+	display: flex;
+	justify-content: space-evenly;
+	margin-bottom: 5%;
+	grid-column: 4;
+}
+  
+  /*End of video selection section */
+
+
+
+
+    /*Grid for tablet and desktop only - End of section */
+    /* || > Article Page - Article Box */
+    .articles-section {
+      display: flex;
+      flex-flow: row nowrap;
+      height: auto;
+      align-content: center;
+      /* margin-left: 5%; */
+      justify-content: space-evenly;
+    }
+    #article-box {
+      display: flex;
+      flex-direction: column;
+      width: 280px;
+      height: 200px;
+      background-color: #EEEEEE;
+      border-radius: 5px;
+    }
+    .articles .title-graph {
+      display: flex;
+      background-color: var(--accent);
+      height: 60px;
+      /* top-left | top-right-and-bottom-left | bottom-right */
+      border-radius: 5px 5px 0px 0px;
+      align-items: center;
+      align-content: center;
+    }
+    .articles .title-graph h3 {
+      display: flex;
+      align-content: space-between;
+      color: var(--light-title);
+    }
+    .articles img {
+      padding-left: 5%;
+    }
+    .articles .read-article-btn {
+      width: 150px;
+      height: 45px;
+      font-size: 20px;
+      margin-top: 5%;
+      margin-left: 5%;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #FFFFFF;
+      border: 2px solid #000000;
+      box-sizing: border-box;
+    }
+    /* || > Article Details Page - CSS Styles for individual articles page */
+    .article-section {
+      padding-left: 5%;
+      width: 85%;
+    }
+    .article-detail p {
+      padding-left: 5%;
+      width: 85%;
+      line-height: 1.5;
+    }
+    .quote {
+      width: 90%;
+      height: 180px;
+      padding-left: 5%;
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 182.99%;
+      color: #000000;
+    }
+    /* || > About page */
+    
+  }
+  @media only screen and (min-width: 1200px) {
+
+
+    .btn-toggle-nav {
+      width: 5%;
+    
+  }
+    .index-title {
+      /* Background image of a museum from Toptal Subtle Patterns */
+      background-image: url("../images/test-bg.png");
+      background-color: var(--accent);
+      height: 700px;
+      width: 1300px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-left: 0%;
+      padding-top: 0px
+    }
+    .index-title h3 {
+      /* Background image of a museum from Toptal Subtle Patterns */
+      padding-left: 5%;
+      padding-top: 0px
+    }
+    /*Style for navigation menu */
+   
+    .menu-hidden {
+      padding-top: 6%;
+    }
+    
+    .small {
+      font-size: 1em;
+    }
+    .medium {
+      font-size: 1.3em;
+    }
+    .large {
+      font-size: 1.5em;
+    }
+    #smallA, #mediumA, #largeA {
+      cursor: pointer;
+    }
+    .font-color {
+      color: var(--accent);
+    }
+    
+    /* End of menu styling */
+    .index-title h1 {
+      margin-top: 200px;
+      margin-left: 5%;
+    }
+    .index-title h3 {
+      margin-top: 5%;
+      width: 60%;
+      line-height: 1.5;
+      margin-left: 0%;
+    }
+   
+    /* Video Higlight Section */
+    .video-highlight {
+      margin-left: 5%;
+    }
+    .video-highlight, .video {
+      margin-left: 5%;
+    }
+    .video-highlight #video-highlight-items h4 {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    /* Museum Spotlight Section Tablet and desktop - This section uses grid layout */
+    .museum-spotlight {
+      display: grid;
+      margin-top: 10%;
+      margin-bottom: 10%;
+      margin-left: 5%;
+      height: auto;
+      width: 90%;
+      grid-template-columns: 25% 25% 25% 25%;
+      grid-template-rows: 30% 15% 15% 20% 10%;
+    }
+    .museum-spotlight #spotlight-title {
+      grid-row: 1;
+    }
+    .museum-spotlight #spotlight-text {
+      grid-row: 2;
+    }
+    .museum-spotlight #museum-pic1 {
+      grid-row: 3;
+      width: 100%;
+      margin-bottom: 2%;
+    }
+    .museum-spotlight #museum-pic2 {
+      grid-row: 4;
+      margin-bottom: 2%;
+    }
+    .museum-spotlight #museum-pic3 {
+      grid-row: 5;
+      margin-bottom: 2%;
+    }
+    .museum-spotlight #museum-pic4 {
+      grid-column: 3;
+      grid-row: 2;
+      margin-bottom: 2%;
+      width: 100%;
+      padding-top: 151px;
+    }
+    /*Grid for tablet and desktop only - End of section */
+    /* Newsletter Section */
+    .newsletter {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      background-color: var(--accent);
+      height: 250px;
+    }
+    .newsletter #item3 h2 {
+      display: flex;
+      color: mintcream;
+      letter-spacing: 0px;
+      width: 400.85px;
+      text-align: center
+    }
+    .newsletter #newsletter-input {
+      display: flex;
+      width: 300px;
+      height: 30px;
+      font-size: 14px;
+      font-style: italic;
+    }
+    .newsletter #newsletter-btn {
+      display: flex;
+      margin-top: 2%;
+      background-color: turquoise;
+      height: 40px;
+      width: 310px;
+      border-style: none;
+      color: mintcream;
+    }
+    /* Home Articles Section 
+  This section is different for tablet and desktop views and uses other clases*/
+  .hm-articles-section
+  {
+    display: none;
+  }
+    /* Home Articles Section For desktop */
+    .selected-articles {
+      padding: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      height: 4 00px;
+    }
+    .selected-articles #section-title h2 {
+      font-size: 40px;
+      text-align: center;
+    }
+    .selected-articles .columns-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 5%;
+    }
+    .selected-articles .articles-columns {
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+      padding-left: 5%;
+    }
+    .selected-articles .columns-row .articles-columns h3 {
+      padding-left: 0%;
+    }
+    /* Selected Audio Section */
+    .sl-audio-section {
+      display: flex;
+      flex-direction: column;
+    }
+    .sl-audio-section .title, #subtitle, .description {
+      padding-left: 5%;
+      font-family: sans-serif;
+    }
+    .audio {
+      width: 60%;
+      padding-left: 5%;
+    }
+    /* End of audio section */
+    /* Selected Upcoming Talks Section */
+    .upcoming-talks {
+      background-color: lightgray;
+      height: 560px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10%;
+    }
+    .upcoming-talks .img-title {
+      display: flex;
+      flex-direction: row;
+      margin-left: 5%;
+      margin-top: 10%;
+    }
+    .upcoming-talks .img-title h3 {
+      margin-left: 2%;
+    }
+    /* || > Article Page - Article Box */
+    .articles-section {
+      display: flex;
+      flex-flow: row nowrap;
+      height: auto;
+      align-content: center;
+      /* margin-left: 5%; */
+      justify-content: space-evenly;
+    }
+    #article-box {
+      display: flex;
+      flex-direction: column;
+      width: 340px;
+      height: 200px;
+      background-color: #EEEEEE;
+      border-radius: 5px;
+    }
+    .articles .title-graph {
+      display: flex;
+      background-color: var(--accent);
+      height: 60px;
+      /* top-left | top-right-and-bottom-left | bottom-right */
+      border-radius: 5px 5px 0px 0px;
+      align-items: center;
+      align-content: center;
+    }
+    .articles .title-graph h3 {
+      display: flex;
+      align-content: space-between;
+      color: var(--light-title);
+    }
+    .articles img {
+      padding-left: 5%;
+    }
+    .articles .read-article-btn {
+      width: 150px;
+      height: 45px;
+      font-size: 20px;
+      margin-top: 5%;
+      margin-left: 5%;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #FFFFFF;
+      border: 2px solid #000000;
+      box-sizing: border-box;
+    }
+    /* || > Article Details Page - CSS Styles for individual articles page */
+    .article-section {
+      padding-left: 5%;
+      width: 85%;
+    }
+    .article-detail p {
+      padding-left: 5%;
+      width: 85%;
+      line-height: 1.5;
+    }
+    /* || > Education Page  */
+    
+    /* || > Talks Page  */
+    .talks {
+      display: flex;
+      flex-direction: column;
+      padding-left: 5%;
+    }
+    .talks .talks-img-title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .talks .talks-publication-date {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-content: space-around;
+      margin-bottom: 3%;
+    }
+    .talks .talks-description {
+      display: flex;
+      flex-direction: column;
+      line-height: 2.5;
+      font-family: Arial, Helvetica, sans-serif;
+      width: 95%;
+    }
+    .talks .talks-description .title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      color: #8A2BE2;
+    }
+    
+    .extra-talks .extra-talks-publication {
+      display: flex;
+      flex-direction: row;
+    }
+    .extra-talks .extra-talk-content {
+      display: flex;
+      flex-direction: row;
+      line-height: 2.0;
+      width: 90%;
+      align-items: flex-start;
+    }
+    .more-talks-row {
+      display: flex;
+      flex-direction: row;
+      color: var(--accent);
+      align-items: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    /* || > About page */
+    
+    /* || > Resources Page  */
+    .book-categories {
+      display: flex;
+      flex-direction: row;
+      margin-left: 5%;
+      align-items: center;
+    }
+    book-categories-columns .book-categories p {
+      margin-left: 5%;
+    }
+    .book-categories .book-content {
+      margin-left: 2%;
+    }
+    /* Here you will find the displayed list according to the category selected */
+    .category-by-books {
+      display: flex;
+      flex-direction: row;
+    }
+    .category-by-books img {
+      margin-left: 5%;
+      align-self: baseline;
+      padding-top: 3%;
+    }
+    .category-by-books .category-content h2 {
+      font-size: 20px;
+    }
+    .category-by-books .category-content p {
+      margin-left: 5%;
+    }
+    .category-by-books .category-content #btn-categor-details {
+      margin-left: 5%;
+      background-color: var(--accent);
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--light-title);
+      border-radius: 4px;
+      width: 120px;
+      height: 34px;
+      border-style: none;
+      font-size: 18px;
+    }
+    .book-categories-columns p {
+      font-size: 14px;
+    }
+    .category-by-books .category-content hr {
+      margin-left: 5%;
+      width: 300px;
+      margin-bottom: 5%;
+      border: 0.5px solid var(--accent);
+    }
+    /*Hides books categories only for row view */
+    .book-categories {
+      display: none;
+    }
+    .theory-books-mobile h3 {
+      margin-left: 5%;
+    }
+  }
+
+
+  @media only screen and (min-width: 1200px) {
+
+    .menu-hidden {
+      padding-top: 4%;
+    }
+
+
+    /* Museum Spotlight Section Tablet and desktop - This section uses grid layout */
+    .museum-spotlight {
+      display: grid;
+      margin-top:5%;
+      margin-bottom: 10%;
+      margin-left: 5%;
+      height: auto;
+      width: 90%;
+      grid-template-columns: 25% 5% 20% 25% 25%;
+      grid-template-rows: 30% 15% 15% 20% 10%;
+    }
+    .museum-spotlight #spotlight-title {
+      grid-row: 1;
+    }
+    .museum-spotlight #spotlight-text {
+      grid-row: 2;
+    }
+    .museum-spotlight #museum-pic1 {
+      grid-row: 2;
+      grid-column: 3;
+      width: 100%;
+      margin-bottom: 2%;
+    }
+    .museum-spotlight #museum-pic2 {
+      grid-row: 2;
+      grid-column: 4;
+      margin-bottom: 2%;
+    }
+    .museum-spotlight #museum-pic3 {
+      grid-column: 5;
+      grid-row: 2;
+      margin-bottom: 2%;
+    }
+    .museum-spotlight #museum-pic4 {
+      display: grid;
+      grid-column: 3;
+      grid-row: 2;
+      margin-bottom: 2%;
+      width: 100%;
+      padding-top: 151px;
+    }
+    .museum-spotlight #museum-pic5 {
+      display: grid;
+      grid-row: 2;
+      grid-column: 5;
+      padding-top: 170px;
+      width: 250px;
+    }
+    /*Grid for tablet and desktop only - End of section */
+    
+     /*Video selection section*/
+     .video-selection
+     {
+       background-color: var(--grey-bg);
+     }
+
+
+  }
+
+
+  @media only screen and (min-width: 1600px) {
+    
+
+    /*Video selection section*/
+    .video-selection
+    {
+      background-color: var(--grey-bg);
+      display: grid;
+      grid-template-columns: 25% 25% 25% 25%;
+      grid-template-rows: 25% 25% 25% 25%;
+      height: auto;
+
+    }
+
+    .video-selection .video-selection-title{
+      grid-column: 1;
+      grid-row: 2;
+      margin-left: 5%;
+      font-family: 'Poppins', Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    .video-selection .item-1{
+      margin-top: 5%;
+      grid-column: 2;
+    }
+
+    .video-selection .item-2{
+      margin-top: 5%;
+      grid-column: 3;
+
+    }
+
+    .video-selection .item-3{
+      grid-column: 2;
+      grid-row: 4;
+    }
+
+    .video-selection .item-4{
+      grid-column: 3;
+      grid-row: 4;
+      margin-bottom: 5%;
+    }
+
+    
+    /*End of video selection section */
+    
+    /* Museum Spotlight Section Tablet and desktop - This section uses grid layout */
+    .museum-spotlight {
+      display: grid;
+      margin-top:5%;
+      margin-bottom: 10%;
+      margin-left: 5%;
+      height: auto;
+      width: 70%;
+      grid-template-columns: 25% 5% 20% 25% 25%;
+      grid-template-rows: 30% 15% 15% 20% 10%;
+    }
+    .museum-spotlight #spotlight-title {
+      grid-row: 1;
+    }
+    .museum-spotlight #spotlight-text {
+      grid-row: 2;
+    }
+    .museum-spotlight #museum-pic1 {
+      grid-row: 2;
+      grid-column: 3;
+      width: 100%;
+      margin-bottom: 2%;
+    }
+    .museum-spotlight #museum-pic2 {
+      grid-row: 2;
+      grid-column: 4;
+      margin-bottom: 2%;
+    }
+    .museum-spotlight #museum-pic3 {
+      grid-column: 5;
+      grid-row: 2;
+      margin-bottom: 2%;
+    }
+    .museum-spotlight #museum-pic4 {
+      display: grid;
+      grid-column: 3;
+      grid-row: 2;
+      margin-bottom: 2%;
+      width: 100%;
+      padding-top: 151px;
+    }
+    .museum-spotlight #museum-pic5 {
+      display: grid;
+      grid-row: 2;
+      grid-column: 5;
+      padding-top: 170px;
+      width: 250px;
+    }
+    /*Grid for tablet and desktop only - End of section */
+
+    .newsletter{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      background-color: var(--accent);
+      height: 250px;
+    }
+    
+  }
+
+

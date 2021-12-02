@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Museumzine - Final Web Dev Project</title>
+        <!-- Here we have two separate stylesheets
+        one for our screen displays and one for users who want to print -->
+        <link rel="stylesheet" media="screen" href="../css/styles.css">
+        <link rel="stylesheet" media="print" href="../css/print.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,200&family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+
+    </head>
+    <body>
+        <!-- This is  a comment -->
+        <!--
+  This is a long comment example. This is a long comment example.
+  This is a long comment example. This is a long comment example.
+-->
+        <!--Avoid outline:0 or outline:none or other styles that remove or l
+    imit visibility of keyboard focus indicators.
+-->
+        <header>
+            <nav class="nav-main">
+                <div class="logo">
+                    <a href="../index.html"> <img src="../images/museumzine-logo.svg" alt="Image of museumzine logo" style="width:200px;"> </a>
+                </div>
+
+                <div id="font-size-edit">
+                    <span class="small" id="smallA">A</span>
+                    <span class="medium" id="mediumA">A</span>
+                    <span class="large" id="largeA">A</span>
+                </div>
+
+
+                <div class="btn-toggle-nav" onclick="openNavMenu()"></div>
+            </nav>
+
+            <div class="menu-hidden">
+                <ul>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="../articles.html">Articles</a>
+                    </li>
+                    <li>
+                        <a href="../education.html">Education</a>
+                    </li>
+                    <li>
+                        <a href="../talks.html">Talks</a>
+                    </li>
+                    <li>
+                        <a href="../about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="../resources.html">Resources</a>
+                    </li>
+                    <!--Creating a switch for color contrast-->
+                   <li><p id="night-mode">Night Mode</p></li> 
+                </ul>
+            </div>
+            <!--End of main nav menu-->
+  
+
+        </header>
+
+        <!-- This spacer is a big bigger in height since the article page does not
+        show a header image as in the main pages -->
+        <div class="article-spacer"></div>
+
+        <!-- breadcrumbs row -->
+        <nav class="breadcrumbs-nav">
+            <div class="bread-itm">You are here >></div>
+            <div></div>
+            <div class="bread-itm">
+                <a href="../index.html">Home/</a>
+            </div>
+            <div class="bread-itm">
+                <a href="../articles.html"> Articles/</a>
+            </div>
+            <div class="bread-itm">Why we need museums more than ever</div>
+        </nav>
+
+        <!-- spacer row -->
+        <div class="spacer"></div>
+
+        <!-- Start of article detail section, this gives users the full article
+        and a more comfortable reading experience -->
+        <section class="articles-section" tabindex="0">
+            <article class="article-detail" tabindex="0">
+                <div class="time-description-single-article">
+                    <img src="../images/time-icon-white.svg" alt="image of a time icon">
+                    <p>Jan 8 - 2021 - 8 min read</p>
+                </div>
+                <p></p>
+                <p>
+                    <b>Author:</b>
+                    By Rebecca Carlsson
+                </p>
+                <h3>Why we need museums now more than ever</h3>
+                <p><i>Original article from: https://www.museumnext.com/article/why-we-need-museums-now-more-than-ever/</i></p>
+                <p>
+                    In today’s uncertain times, museums can act as an anchor in the storm.
+
+To those who aren’t as passionate about the power of museums as readers of this blog, it can often seem that such institutions are merely places where forgotten objects go to enjoy their final years.
+
+But despite this, there’s a strong case to be made that the museum is more relevant today than it has ever been. From addressing key social issues to transforming how we see the future, the humble museum has the power to reflect and shape our society. Here are five reasons why we need museums now more than ever.
+                </p>
+                <img
+                    src="../images/why-we-need-museums.jpeg"
+                    alt="image of the museum"
+                    style="margin-left:5%;"
+                    tabindex="0"
+                    width="400px"
+                >
+                <h3>Why we need museums now more than ever</h3>
+                <p>First and foremost, museums and galleries provide an insight into the history of humankind. And while no museum can claim to provide a complete picture, the lessons we can learn from past events, wonders and tragedies are priceless.</p>
+                <br>
+                <p>This is especially true in times of turmoil. Today, it’s impossible to ignore the escalating tensions between nations, between political parties and between different cultural groups. Instead of finding common ground it seems that issues of class, race, gender and environmentalism are becoming ever more polarised.</p>
+                <br>
+                <p>To help the public re-establish this common ground and learn to build bridges rather than breed division, many believe that museums have a role to play in giving us perspective – be it through intellectual exercises or merely holding up mistakes of the past as evidence of where such behaviour will lead us once more.</p>
+                <br>
+                <p>Last year, the Museum of Oxford launched its Queering Spires exhibition to celebrate the ‘hidden history’ of Oxford’s LGBTQIA+ community. Speaking at the time, co-founder of the project Richard Howlett said that Oxford has a “queer history to be proud of.”</p>
+                <br>
+            </article>
+        </section>
+        <hr>
+
+        <div class="spacer"></div>
+
+        <section class = "social-media">
+            <p>Social Media</p>
+           <img src="../images/twitter.svg"  alt="image of twitter icon">
+           
+                <img src="../images/instagram.svg" alt="image of twitter icon">
+         
+        </section>     
+        
+        <div class="spacer"></div>
+
+            
+        <!-- start of newsletter goes here -->
+        <section class="newsletter-singular-articles" aria-label="newsletter" tabindex="0">
+            <div id="item3">
+                <h2 tabindex="0">Would you like to receive our newsletter?</h2>
+            </div>
+            <form>
+                <input
+                    id="newsletter-input"
+                    type="text"
+                    id="femail"
+                    name="femail"
+                    value="Enter email"
+                >
+                <input id="newsletter-btn" type="submit" value="Subscribe">
+            </form>
+        </section>
+
+
+       <!--Footer starts here-->
+    <footer>
+        
+        <div id="footer-logo">
+            <a href="index.html"> <img src="images/museumzine-logo-footer.svg" alt="Image of museumzine logo" style="width:200px;"> </a>
+        </div>
+
+        <div id="footer-description">Museumzine is a collection of articles, lectures and talks
+            for all those interested in museums and art</div>
+      
+        <div id="footer-nav">
+            <a href="articles.html">Articles</a>
+            
+                <a href="../education.html">Education</a>
+            
+                <a href="../talks.html">Talks</a>
+            
+                <a href="../about.html">About</a>
+           
+                <a href="../resources.html">Resources</a>
+            
+                <a href="#top">Back to top</a>
+        </div>
+      
+    <div id="contact">
+        To contact please reach out to
+        <a href="mailto:aaam4@student.london.ac.uk" target="_top" tabindex="0">aaam4@student.london.ac.uk</a>
+    </div>
+    <div id ="copyright" tabindex="0">
+       (CC) 2021 Museumzine
+        This is a student project for the University of London’s Computer Science Program authored by Álvaro Álvarez
+    </div>
+
+</footer>
+
+<script src="../js/main.js"></script>
+    </body>

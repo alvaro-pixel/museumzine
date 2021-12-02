@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Museumzine - Final Web Dev Project</title>
+        <!-- Here we have two separate stylesheets
+        one for our screen displays and one for users who want to print -->
+        <link rel="stylesheet" media="screen" href="../css/styles.css">
+        <link rel="stylesheet" media="print" href="../css/print.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,200&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- This is  a comment -->
+        <!--
+  This is a long comment example. This is a long comment example.
+  This is a long comment example. This is a long comment example.
+-->
+        <!--Avoid outline:0 or outline:none or other styles that remove or l
+    imit visibility of keyboard focus indicators.
+-->
+        <header>
+            <nav class="nav-main">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/museumzine-logo.svg" alt="Image of museumzine logo" style="width:200px;">
+                    </a>
+                </div>
+                <div id="font-size-edit">
+                    <span class="small" id="smallA">A</span>
+                    <span class="medium" id="mediumA">A</span>
+                    <span class="large" id="largeA">A</span>
+                </div>
+                <div class="btn-toggle-nav" onclick="openNavMenu()"></div>
+            </nav>
+            <div class="menu-hidden">
+                <ul>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="../articles.html">Articles</a>
+                    </li>
+                    <li>
+                        <a href="../education.html">Education</a>
+                    </li>
+                    <li>
+                        <a href="../talks.html">Talks</a>
+                    </li>
+                    <li>
+                        <a href="../about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="../resources.html">Resources</a>
+                    </li>
+                    <!--Creating a switch for color contrast-->
+                    <li>
+                        <p id="night-mode">Night Mode</p>
+                    </li>
+                </ul>
+            </div>
+            <!--End of main nav menu-->
+        </header>
+        <!-- This spacer is a big bigger in height since the article page does not
+        show a header image as in the main pages -->
+        <div class="article-spacer"></div>
+        <!-- breadcrumbs row -->
+        <nav class="breadcrumbs-nav">
+            <div class="bread-itm">You are here >></div>
+            <div></div>
+            <div class="bread-itm">
+                <a href="../index.html">Home/</a>
+            </div>
+            <div class="bread-itm">
+                <a href="../articles.html"> Articles/</a>
+            </div>
+            <div class="bread-itm">
+                Museums Post COVID-19
+            </div>
+        </nav>
+        <!-- spacer row -->
+        <div class="spacer"></div>
+        <!-- Start of article detail section, this gives users the full article
+        and a more comfortable reading experience -->
+        <section class="articles-section" tabindex="0">
+            <article class="article-detail" tabindex="0">
+                <div class="time-description-single-article">
+                    <img src="../images/time-icon-white.svg" alt="image of a time icon">
+                    <p>Jan 8 - 2021 - 8 min read</p>
+                </div>
+                <p></p>
+                <p>
+                    <b>Author:</b>
+                    Alvaro Alvarez
+                </p>
+                <h3>
+                    Museums Post COVID-19
+                </h3>
+                <p>
+                    *The article below was the result of a team conversation about planning for a post COVID-19 future of museums. 
+
+The post COVID-19 museum, will be nimble, lean, inclusive, community oriented and visitor centered. Exhibitions and public programing of the post COVID-19 museum, will be a hybrid of digital and in-person. Museum experiences (both online and in-person) will be thoughtful of the needs of the visitor.
+                </p>
+                <img
+                    src="../images/article-2-image.webp"
+                    alt="image of the museum"
+                    style="margin-left:5%;"
+                    tabindex="0"
+                    width="400px"
+                >
+                <h3>
+                    What will post COVID-19 museums look like ?
+                </h3>
+                <p>
+                    Will we be able to experience museums in the same way previous to the 2020 pandemic?
+                </p>
+                <br>
+                <p>
+                    The short answer is no. Take a look around, any experience that involved more than 10 people gathering has changed dramatically, from casinos, air-travel, and this year’s US Open(3), one can see the evolution of culture and redistribution of bodies in relation to space affect our cultural life. The ‘Respublica’ the thing ‘Res-Thing’ and ‘Publica-Public’ has dramatically shifted to a thing of confinement or digital seclusion, albeit it’s hard to predict if things will roll back once a global working vaccine is in place.  
+
+                    New rules such as wearing a mandatory mask will hinder anyone’s appreciation of an exhibition, having to wear a mask for whatever the length of our experience is uncomfortable to say the  least, and for more than one visitor the memory of a good exhibition will be hindered, and for the time being large groups of visitors will also become a thing of the past.
+                </p>
+                <br>
+                <h3>
+                    A tactless museum
+                </h3>
+                <p>
+                    The museum’s experience history has been one of observation and contemplation, but part of its restored charm relies to a great extent on new technologies, new interactive exhibits, and cooperation with museum staff members, such as guides and experts. These elements transform the museum space and allow an emotional connection with the objects / artworks and for the time being this space of connection, mentorship, and relations is being torn apart.
+
+                The past ideas have focused on the negative aspects that the post pandemic world has had on museums. In the digital realm we could say there’s a different story.
+                
+                Though traditionally museums don’t picture themselves in the category of entertainment, the global pandemic has put them in deeper competition with the likes of Netflix and social media giants such as Facebook and TikTok. But this shouldn’t become a struggle on getting more clicks and capturing eyeballs, museums are not theme parks, and they provide something more crucial to societies;  a sense of community, civic values, awareness, reflection, in short a museum is a ‘dispositif’ like Michele Foucault mentions, of great civilizing power. Instead the adequate use of these platforms can help bridge the immediate disconnect museums are facing, to take them a step closer to all their visitors.
+                </p>
+                <h3>
+                    A disrupted museum
+                </h3>
+                <p>
+                    In the aftermath of the pandemic Airbnb launched its online experience model, a way to allow part of its user base to share intimate experiences. What’s key in that example, are the two areas the future museum will need to survive or reduce the effects of events like pandemics. The first one being Rapid Digital Adaptation, where making use of your existing resources and digital platforms helps weather down the economic impact of pandemics. Likewise physical space may be limited due to covid-19 restrictions, but smaller museums could open their doors for new visitors around the globe digitally. A simple case of this is a clever French guide(4) that started creating 360 videos, as a way for users to appreciate the surroundings of Paris. This is to say, that in order for museums to reach new and existing audiences in an engaging way, they can make use of their experts and existing technologies to work on the expanded museum experience. Like Buckmister Fuller said, make a new model that makes the existing one obsolete.
+
+                Additionally museums need to focus on building an agile staff composed of a creative IT department, not one that handles its database, website, and newsletter, but a department that makes best use of today’s digital platforms in order to expand the presence of museums to all its users. The last ideas appear to be obvious, but they represent a colossal deviation from traditional museum thinking. Other conservative industries such as finance, education, and medicine are following suit, but the rate of change is slow(4).Advances won’t come overnight and while a handful of institutions are merely using government recommended measures, the museum of the future will likely be a hybrid of a startup, an art gallery, a gig venue, a theater, and a university(5).
+                
+                The new museum model may not need to be attached to an institution, physical spaces might themselves become relics of the past, an object to contemplate in itself of a bygone era. Instead the ability to focus on digital and open air temporary exhibitions might make more sense, if the museum works with a global set of experts, their reach could affect the lives of their local and global communities. The museum of the future will become associated with its users, defined by the tribes it represents, a village united by the values and aspirations it upholds.
+                </p>
+                <h3>End Notes</h3>
+                    <ul style="padding-left: 5%;"> 
+                        <li>
+                            (1). R. Buckminster Fuller
+                        </li>
+                        <li>
+                            (2). Kingslee James McLean Daley “Akala”, 2016 LCD Awards
+                        </li>
+                        <li>
+                            (3). Industries Most and Least Impacted by COVID-19 from a Probability of Default Perspective – March 2020 Update
+                        </li>
+                        <li>
+                            (4). WIRED By Design: These Incredible High-Tech Exhibits Are the Future of Museums
+                        </li>
+                        <li>
+                            (5). [360°/VR Video] Virtual guided tour of Paris : Eiffel tower District
+                        </li>
+                        <li>
+                            (6). 4 Traditional Industries Changed by Technology
+                        </li>
+                        <li>            (7). MoMA launches free online courses on modern art, photography and fashion
+                        </p>
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <hr>
+        <div class="spacer"></div>
+        <section class="social-media">
+            <p>Social Media</p>
+            <img src="../images/twitter.svg" alt="image of twitter icon">
+            <img src="../images/instagram.svg" alt="image of twitter icon">
+        </section>
+        <div class="spacer"></div>
+        <!-- start of newsletter goes here -->
+        <section class="newsletter-singular-articles" aria-label="newsletter" tabindex="0">
+            <div id="item3">
+                <h2 tabindex="0">Would you like to receive our newsletter?</h2>
+            </div>
+            <form>
+                <input
+                    id="newsletter-input"
+                    type="text"
+                    id="femail"
+                    name="femail"
+                    value="Enter email"
+                >
+                <input id="newsletter-btn" type="submit" value="Subscribe">
+            </form>
+        </section>
+        <!--Footer starts here-->
+        <footer>
+            <div id="footer-logo">
+                <a href="index.html">
+                    <img src="../images/museumzine-logo-footer.svg" alt="Image of museumzine logo" style="width:200px;">
+                </a>
+            </div>
+            <div id="footer-description">
+                Museumzine is a collection of articles, lectures and talks
+            for all those interested in museums and art
+            </div>
+            <div id="footer-nav">
+                <a href="../talks.html">Articles</a>
+                <a href="../education.html">Education</a>
+                <a href="../talks.html">Talks</a>
+                <a href="../about.html">About</a>
+                <a href="../resources.html">Resources</a>
+                <a href="#top">Back to top</a>
+            </div>
+            <div id="contact">
+                To contact please reach out to
+                <a href="mailto:aaam4@student.london.ac.uk" target="_top" tabindex="0">aaam4@student.london.ac.uk</a>
+            </div>
+            <div id="copyright" tabindex="0">
+                (CC) 2021 Museumzine
+        This is a student project for the University of London’s Computer Science Program authored by Álvaro Álvarez
+            </div>
+        </footer>
+        <script src="../js/main.js"></script>
+    </body>
